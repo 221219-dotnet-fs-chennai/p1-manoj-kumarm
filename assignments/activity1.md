@@ -1,7 +1,6 @@
 # Commands used
 	- cd ~
 	- cd /c
-	- cd /c
 	- mkdir Activities
 	- touch Activity1.sh
 	- vi Activities1.sh
