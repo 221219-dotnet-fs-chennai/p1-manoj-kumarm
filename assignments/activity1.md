@@ -1,18 +1,15 @@
 # Commands used
 	- cd ~
-	- cd /c
+	- cd /m
 	- mkdir Activities
-	- touch Activity1.sh
-	- vi Activities1.sh
+	- vi Activity1.sh
 	- i - to go into the edit mode
 	- esc - exit the edit mode
 	- shift + z + z - to save the file and exit the vi editor
-	- touch Activity1.md
 	- vi Activity1.md
 	- i - to go into the edit mode
 	- esc - exit the edit mode
 	- shift + z + z - to save the file and exit the vi editor
-	- code Activity1.sh - to open the file in vs code
-	- bash Activity1.sh - to execute the .sh file
-	- after the execution is complete
-	- code ACtivity1.md - to open the file in vs code
+	- bash Activity1.sh - to run/execute the .sh file
+	- cat Activity1.sh - to show the file content in gitbash terminal
+	- cat ACtivity1.md - to show the file content in gitbash terminal

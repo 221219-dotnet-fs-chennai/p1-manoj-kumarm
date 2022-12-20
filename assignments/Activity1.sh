@@ -1,3 +1,4 @@
+#! /usr/bin/bash #shebang
 echo "Welcome user!"
 read -p "Enter your First name: " fname
 read -p "Enter your Last name: " lname
