@@ -1,0 +1,1 @@
+Server=MANOJ;Database=project0;Trusted_Connection=True;
