@@ -1,4 +1,5 @@
 ﻿using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using DataLayer;
 
 namespace TrainerOnline
@@ -11,8 +12,52 @@ namespace TrainerOnline
             this.cs = cs;
         }
 
+        internal List<UpdateDetails> GetUserPersonalDetails(int id)
+        {
+            List<UpdateDetails> list = new();
+            string query = $"select [fullname], [phone], [website], [aboutme], [gender] from [trainer_details] where [trainerid] = {id}";
+            using SqlConnection conn = new(cs);
+            try
+            {
+                conn.Open();
+                using SqlCommand newSqlCommand = new(query, conn);
+                using SqlDataReader reader = newSqlCommand.ExecuteReader();
+                while (reader.Read())
+                {
+                    list.Add(new UpdateDetails()
+                    {
+                        fullname = reader.GetString(0),
+                        phone = reader.GetString(1),
+                        website = reader.GetString(2),
+                        aboutme = reader.GetString(3),
+                        gender = reader.GetString(4),
+                    });
+                }
+            }
+            catch (InvalidCastException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            catch (InvalidOperationException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            catch (SqlTypeException e) {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return list;
+        }
+
         internal List<Company> GetCompany(int id) {
-            List<Company> list = new();
+            List<Company> list = new List<Company>();
             string query = $"select [companyname], [title], [startyear], [endyear] from [trainer_company] where [trainercompanyid] = {id}";
             using SqlConnection conn = new(cs);
             try
@@ -331,15 +376,17 @@ namespace TrainerOnline
 
 
 
-        internal async Task<List<Skills>> GetAllSkillsAsync(int id)
+        internal List<Skills> GetAllSkillsAsync(int id)
         {
             List<Skills> newList = new();
             string query = $"select [skill] from [trainer_skill] where [trainerskillid] = {id};";
-            using SqlConnection conn = new(cs);
-            SqlCommand newSqlCommand = new(query, conn);
+            
             try
             {
-                SqlDataReader reader = await newSqlCommand.ExecuteReaderAsync();
+                using SqlConnection conn = new(cs);
+                conn.Open();
+                SqlCommand newSqlCommand = new(query, conn);
+                SqlDataReader reader = newSqlCommand.ExecuteReader();
                 while (reader.Read())
                 {
                     newList.Add(new Skills(reader.GetString(0))
@@ -633,47 +680,7 @@ namespace TrainerOnline
             }
         }
 
-       
-        internal List<UpdateDetails> GetUpdateDetails(int id)
-        {
-            List<UpdateDetails> newList = new();
-            string query = $"select [fullname], [phone], [website], [aboutme], [gender]  from [trainer_details] where [trainerid] = {id};";
-            using SqlConnection conn = new(cs);
-            try
-            {
-                conn.Open();
-                SqlCommand newSqlCommand = new(query, conn);
-                SqlDataReader reader = newSqlCommand.ExecuteReader();
-                while (reader.Read())
-                {
-                    newList.Add(new UpdateDetails()
-                    {
-                        fullname = reader.GetString(3),
-                        phone = reader.GetString(4),
-                        website = reader.GetString(5),
-                        aboutme = reader.GetString(6),
-                        gender = reader.GetString(7),
-                    });
-                }
-            }
-            catch (InvalidCastException e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            catch (SqlException e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            catch (InvalidOperationException e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            finally
-            {
-                conn.Close();
-            }
-            return newList;
-        }
+      
         internal void AddOtherDetails(int id, UpdateDetails details) {
             string query = $"update [trainer_details] set [fullname] = @fullname, [phone] = @phone, [website] = @website, [aboutme] = @aboutme, [gender] = @gender where [trainerid] = {id}";
             using SqlConnection conn = new(cs);

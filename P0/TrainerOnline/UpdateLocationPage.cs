@@ -13,18 +13,24 @@ namespace TrainerOnline
         {
             Console.WriteLine("-------------------------Location Details-------------------------");
             List<Location> newList = newSql.GetUserLocation(UserIdPage.newUserProfile.userid);
-            foreach (Location l in newList)
-            {
-                Console.WriteLine("Current location");
-                Console.WriteLine(@$"zipcode - {l.zipcode}
-city - {l.city}");
+            if (newList.Count != 0) { 
+                foreach (Location l in newList)
+                {
+                    Console.WriteLine("Current location");
+                    Console.WriteLine(@$"zipcode - {l.zipcode}
+    city - {l.city}");
+                }
+                Console.WriteLine($@"
+        press [1] to enter your zipcode - {newLocation.zipcode}
+        press [2] to enter your city name - {newLocation.city}
+        press [3] to save changes
+        press [b] to go back
+        press [0] to exit");
             }
-            Console.WriteLine($@"
-    press [1] to enter your zipcode - {newLocation.zipcode}
-    press [2] to enter your city name - {newLocation.city}
-    press [3] to save changes
-    press [b] to go back
-    press [0] to exit");
+            else
+            {
+                Console.WriteLine("please add the location details first to update them, press b to go back"); 
+            }
         }
 
         public string UserOption()
@@ -34,7 +40,16 @@ city - {l.city}");
             {
                 case "1":
                     Console.WriteLine("enter the zipcode");
-                    newLocation.zipcode = Console.ReadLine();
+                    string ZipCode = Console.ReadLine();
+                    if (Validation.IsValidZipcode(ZipCode)) {
+                        newLocation.zipcode = ZipCode;
+                    }
+                    else
+                    {
+                        newLocation.zipcode = "";
+                        Console.WriteLine("Invalid format, please press enter to retry");
+                        Console.ReadKey();
+                    }
                     return "UpdateLocationPage";
                 case "2":
                     Console.WriteLine("enter the city");

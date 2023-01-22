@@ -22,21 +22,27 @@ namespace TrainerOnline
             List<Company> list = newSql.GetCompany(UserIdPage.newUserProfile.userid);
             int j = 0;
             Console.WriteLine("-------------------------Experience Details-------------------------");
-            foreach (Company i in list) {
-                Console.WriteLine($"No. {j}");
-                Console.WriteLine($@"
-    company name: {i.companyname}
-    title: {i.title}
-    start date: {i.startdate}
-    end date: {i.enddate}
-    -------------------------");
-                j++;
+            if (list.Count != 0) {
+                foreach (Company i in list) {
+                    Console.WriteLine($"No. {j}");
+                    Console.WriteLine($@"
+        company name: {i.companyname}
+        title: {i.title}
+        start date: {i.startdate}
+        end date: {i.enddate}
+        -------------------------");
+                    j++;
+                }
+            }
+            else
+            {
+                Console.WriteLine("your experience details are empty please add the experience details first before updating them, press b to go back");
             }
             Console.WriteLine(@$"
-    press [1] - update company name
-    press [2] - update title name
-    press [3] - update start date
-    press [4] - update end date
+    press [1] - update company name - {newName}
+    press [2] - update title name - {newTitle}
+    press [3] - update start date - {newStartDate}
+    press [4] - update end date - {NewEndDate}
     press [5] - save changes
     press [b] - go back
     press [0] - to exit");

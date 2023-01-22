@@ -25,7 +25,7 @@ namespace TrainerOnline
                 }
             }
             else {
-                Console.WriteLine("your skills empty please add the skills first before updating them, press b to go back");
+                Console.WriteLine("your skills are empty please add the skills first before updating them, press b to go back");
             }
             Console.WriteLine($@"
     press [1] to edit skill save changes
@@ -45,19 +45,22 @@ namespace TrainerOnline
                         string newskill = Console.ReadLine();
                         Console.WriteLine("enter the old skill name");
                         string oldSkill = Console.ReadLine();
-                        newSql.UpdateNewSkills(UserIdPage.newUserProfile.userid, oldSkill, newskill);
-                        Console.WriteLine("saving...");
-                        Log.Error($"trainer with id: {UserIdPage.newUserProfile.userid} updated skill detail");
-
+                        if (Validation.IsValidSkillName(newskill) && Validation.IsValidSkillName(oldSkill))
+                        {
+                            newSql.UpdateNewSkills(UserIdPage.newUserProfile.userid, oldSkill, newskill);
+                            Console.WriteLine("saving...");
+                            Log.Error($"trainer with id: {UserIdPage.newUserProfile.userid} updated skill detail");
+                        }
+                        else {
+                            Console.WriteLine("Invalid format please press enter to retry");
+                            Console.ReadKey();
+                        }
                     }
                     catch (Exception ex)
                     {
-
                         Console.WriteLine(ex.Message);
                         Log.Error($"trainer with id: {UserIdPage.newUserProfile.userid} could not update skill detail");
-
                     }
-                    
                     return "UpdateSkillPage";
                 case "b":
                     return "UserIdPage";

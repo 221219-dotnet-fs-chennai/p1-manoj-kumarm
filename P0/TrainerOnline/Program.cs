@@ -86,6 +86,10 @@ while (repeat) {
             Log.Information("Displaying delete skill page to the Trainer");
             newMenu = new DeleteEducationPage();
             break;
+        case "ViewCompleteProfilePage":
+            Log.Information("Displaying view complete profile page to the Trainer");
+            newMenu = new ViewCompleteProfilePage();
+            break;
         case "GoodbyePage":
             Log.Information("your data has been deleted");
             newMenu = new GoodbyePage();

@@ -14,5 +14,10 @@ namespace DataLayer
         }
         public string skillName { get; set; }
         public int trainerskillid { get; set; }
+
+        public override string ToString()
+        {
+            return $"\nSkill Name: {skillName}"; 
+        }
     }
 }

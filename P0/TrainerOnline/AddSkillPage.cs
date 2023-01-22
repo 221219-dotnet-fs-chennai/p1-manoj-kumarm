@@ -13,7 +13,7 @@ namespace TrainerOnline
         {
             Console.WriteLine("-------------------------Add skills-------------------------");
             Console.WriteLine($@"    
-    press [1] - add new skill - {newSkill.skillName}
+    press [1] - add new skill [must be atleast 3 characters long] - {newSkill.skillName}
     press [2] - to save changes
     press [b] - to go back
     press [0] - to exit");
@@ -25,8 +25,17 @@ namespace TrainerOnline
             switch (userinput)
             {
                 case "1":
-                    Console.WriteLine("Enter skill name");
-                    newSkill.skillName = Console.ReadLine();
+                    Console.WriteLine("Enter skill name ");
+                    string newSkillName = Console.ReadLine();
+                    if (Validation.IsValidSkillName(newSkillName)) { 
+                        newSkill.skillName = newSkillName;
+                    }
+                    else
+                    {
+                        newSkill.skillName = "";
+                        Console.WriteLine("Invalid format, skill should be more than 3 characters long, press enter to try again");
+                        Console.ReadKey();
+                    }
                     return "AddSkillPage";
                 case "2":
                     try

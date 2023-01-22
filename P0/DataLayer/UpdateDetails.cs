@@ -7,8 +7,6 @@ namespace DataLayer
     {
         public UpdateDetails() { }
         
-        public int id { get; set; }
-        public string email { get; set; }
         public string fullname { get; set; }
         public string phone { get; set; }
         public string website { get; set; }
@@ -17,12 +15,7 @@ namespace DataLayer
 
         public override string ToString()
         {
-            return @$"
-    Fullname - {fullname}
-    Gender - {gender}
-    Phone - {phone}
-    Website - {website}
-    About me - {aboutme}";
+            return $"\nFullname: {fullname}\nGender: {gender}\nPhone: {phone}\nWebsite: {website}\nAbout me: {aboutme}\n";
         }
     }
 }

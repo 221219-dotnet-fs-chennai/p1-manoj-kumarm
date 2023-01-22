@@ -1,0 +1,35 @@
+2023-01-23 00:01:53.041 +05:30 [INF] new trainer enterted the app
+2023-01-23 00:01:53.779 +05:30 [INF] Displaying main page to the Trainer
+2023-01-23 00:01:54.491 +05:30 [INF] Displying login page to the Trainer
+2023-01-23 00:02:01.268 +05:30 [INF] Displying login page to the Trainer
+2023-01-23 00:02:05.887 +05:30 [INF] Displying login page to the Trainer
+2023-01-23 00:02:06.909 +05:30 [INF] trainer with email: manoj@gmail.com logged in successfully
+2023-01-23 00:02:06.909 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-23 00:02:11.346 +05:30 [INF] trainer with id: 0 was verified
+2023-01-23 00:02:11.346 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-23 00:02:11.875 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-23 00:02:13.194 +05:30 [INF] Displaying view complete profile page to the Trainer
+2023-01-23 00:03:06.314 +05:30 [INF] new trainer enterted the app
+2023-01-23 00:03:07.839 +05:30 [INF] Displaying main page to the Trainer
+2023-01-23 00:03:09.230 +05:30 [INF] Displying login page to the Trainer
+2023-01-23 00:03:13.927 +05:30 [INF] Displying login page to the Trainer
+2023-01-23 00:03:18.260 +05:30 [INF] Displying login page to the Trainer
+2023-01-23 00:03:18.920 +05:30 [INF] trainer with email: manoj@gmail.com logged in successfully
+2023-01-23 00:03:18.920 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-23 00:03:23.614 +05:30 [INF] trainer with id: 0 was verified
+2023-01-23 00:03:23.614 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-23 00:03:24.117 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-23 00:03:25.116 +05:30 [INF] Displaying view complete profile page to the Trainer
+2023-01-23 00:04:14.695 +05:30 [INF] new trainer enterted the app
+2023-01-23 00:04:15.392 +05:30 [INF] Displaying main page to the Trainer
+2023-01-23 00:04:16.044 +05:30 [INF] Displying login page to the Trainer
+2023-01-23 00:04:21.103 +05:30 [INF] Displying login page to the Trainer
+2023-01-23 00:04:25.010 +05:30 [INF] Displying login page to the Trainer
+2023-01-23 00:04:25.634 +05:30 [INF] trainer with email: manoj@gmail.com logged in successfully
+2023-01-23 00:04:25.634 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-23 00:04:31.611 +05:30 [INF] trainer with id: 0 was verified
+2023-01-23 00:04:31.611 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-23 00:04:32.336 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-23 00:04:33.408 +05:30 [INF] Displaying view complete profile page to the Trainer
+2023-01-23 00:25:45.829 +05:30 [INF] new trainer enterted the app
+2023-01-23 00:25:46.454 +05:30 [INF] Displaying main page to the Trainer

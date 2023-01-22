@@ -24,7 +24,7 @@ namespace DataLayer
 
         public override string ToString()
         {
-            return $"{institute} {degree} {gpa} {startDate} {endDate}";
+            return $"\nInstitute Name: {institute}\nDegree: {degree}\nGPA: {gpa}\nStart Date: {startDate}\nEnd Date: {endDate}\n";
         }
 
     }

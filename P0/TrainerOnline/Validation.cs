@@ -81,7 +81,7 @@ namespace UILayer
         }
 
         internal static bool IsValidGpa(string str) {
-            string pattern = @"^(\d.\d)|\d)$";
+            string pattern = @"^((\d.\d)|\d)$";
             if (!Regex.IsMatch(str, pattern, RegexOptions.IgnoreCase))
             {
                 return false;

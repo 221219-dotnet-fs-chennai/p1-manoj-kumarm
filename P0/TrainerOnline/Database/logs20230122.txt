@@ -116,3 +116,334 @@
 2023-01-22 05:38:12.020 +05:30 [INF] your data has been deleted...
 2023-01-22 05:38:14.027 +05:30 [INF] trainer deleted their account permanently
 2023-01-22 05:38:14.027 +05:30 [INF] User exited the application
+2023-01-22 22:04:29.886 +05:30 [INF] new trainer enterted the app
+2023-01-22 22:04:34.008 +05:30 [INF] Displaying main page to the Trainer
+2023-01-22 22:05:24.891 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 22:05:33.411 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 22:05:35.069 +05:30 [INF] Displaying sign page to the Trainer
+2023-01-22 22:05:43.024 +05:30 [ERR] new trainer with id: 0 entered inncorrect sign up details
+2023-01-22 22:05:43.024 +05:30 [INF] Displaying sign page to the Trainer
+2023-01-22 22:05:48.528 +05:30 [INF] Displaying sign page to the Trainer
+2023-01-22 22:05:51.523 +05:30 [INF] Displaying sign page to the Trainer
+2023-01-22 22:05:55.129 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:06:39.849 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:06:46.108 +05:30 [INF] trainer with id: 0 was verified
+2023-01-22 22:06:46.108 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:06:47.558 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:06:54.250 +05:30 [INF] Displaying profile page to the Trainer
+2023-01-22 22:07:00.784 +05:30 [INF] Displaying profile page to the Trainer
+2023-01-22 22:07:12.188 +05:30 [INF] Displaying profile page to the Trainer
+2023-01-22 22:07:19.434 +05:30 [INF] Displaying profile page to the Trainer
+2023-01-22 22:07:23.944 +05:30 [INF] Displaying profile page to the Trainer
+2023-01-22 22:07:34.222 +05:30 [INF] Displaying profile page to the Trainer
+2023-01-22 22:07:39.984 +05:30 [INF] Displaying profile page to the Trainer
+2023-01-22 22:07:43.882 +05:30 [INF] Displaying profile page to the Trainer
+2023-01-22 22:07:53.385 +05:30 [INF] Displaying profile page to the Trainer
+2023-01-22 22:07:58.585 +05:30 [INF] Displaying profile page to the Trainer
+2023-01-22 22:08:08.930 +05:30 [INF] Displaying profile page to the Trainer
+2023-01-22 22:09:56.547 +05:30 [INF] Displaying profile page to the Trainer
+2023-01-22 22:10:03.503 +05:30 [INF] Displaying profile page to the Trainer
+2023-01-22 22:10:41.307 +05:30 [INF] Displaying profile page to the Trainer
+2023-01-22 22:10:45.655 +05:30 [INF] Displaying profile page to the Trainer
+2023-01-22 22:10:49.908 +05:30 [INF] Displaying profile page to the Trainer
+2023-01-22 22:13:59.300 +05:30 [INF] Displaying profile page to the Trainer
+2023-01-22 22:14:01.084 +05:30 [INF] trainer with id: 1111 updated their personal details
+2023-01-22 22:14:01.084 +05:30 [INF] Displaying profile page to the Trainer
+2023-01-22 22:14:07.825 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:16:32.204 +05:30 [INF] Displaying update/add skills page to the Trainer
+2023-01-22 22:16:45.330 +05:30 [INF] Displaying update/add skills page to the Trainer
+2023-01-22 22:17:08.402 +05:30 [INF] Displaying update/add skills page to the Trainer
+2023-01-22 22:20:43.713 +05:30 [INF] Displaying update/add skills page to the Trainer
+2023-01-22 22:20:45.028 +05:30 [INF] trainer with id: 1111 added new skill detail
+2023-01-22 22:20:45.028 +05:30 [INF] Displaying update/add skills page to the Trainer
+2023-01-22 22:20:48.766 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:20:53.663 +05:30 [INF] Displaying update skills page to the Trainer
+2023-01-22 22:22:02.730 +05:30 [INF] Displaying update skills page to the Trainer
+2023-01-22 22:22:17.219 +05:30 [INF] Displaying update skills page to the Trainer
+2023-01-22 22:22:29.081 +05:30 [ERR] trainer with id: 1111 updated skill detail
+2023-01-22 22:22:29.081 +05:30 [INF] Displaying update skills page to the Trainer
+2023-01-22 22:22:46.258 +05:30 [ERR] trainer with id: 1111 updated skill detail
+2023-01-22 22:22:46.258 +05:30 [INF] Displaying update skills page to the Trainer
+2023-01-22 22:22:56.068 +05:30 [ERR] trainer with id: 1111 updated skill detail
+2023-01-22 22:22:56.068 +05:30 [INF] Displaying update skills page to the Trainer
+2023-01-22 22:23:07.220 +05:30 [INF] Displaying update skills page to the Trainer
+2023-01-22 22:25:29.807 +05:30 [INF] Displaying update skills page to the Trainer
+2023-01-22 22:25:33.192 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:25:39.087 +05:30 [INF] Displaying delete skill page to the Trainer
+2023-01-22 22:26:15.476 +05:30 [INF] Displaying delete skill page to the Trainer
+2023-01-22 22:26:17.660 +05:30 [INF] trainer with id: 1111 deleted one skill detail
+2023-01-22 22:26:17.660 +05:30 [INF] Displaying delete skill page to the Trainer
+2023-01-22 22:28:40.902 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:28:48.407 +05:30 [INF] Displaying update/add skills page to the Trainer
+2023-01-22 22:28:52.070 +05:30 [INF] Displaying update/add skills page to the Trainer
+2023-01-22 22:28:53.422 +05:30 [INF] trainer with id: 1111 added new skill detail
+2023-01-22 22:28:53.422 +05:30 [INF] Displaying update/add skills page to the Trainer
+2023-01-22 22:28:56.082 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:29:37.351 +05:30 [INF] Displaying delete skill page to the Trainer
+2023-01-22 22:29:43.396 +05:30 [INF] Displaying delete skill page to the Trainer
+2023-01-22 22:29:45.779 +05:30 [INF] trainer with id: 1111 deleted one skill detail
+2023-01-22 22:29:45.780 +05:30 [INF] Displaying delete skill page to the Trainer
+2023-01-22 22:29:51.514 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:30:08.889 +05:30 [INF] Displaying update location page to the Trainer
+2023-01-22 22:30:10.995 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:30:14.472 +05:30 [INF] Displaying add location page to the Trainer
+2023-01-22 22:30:22.154 +05:30 [INF] Displaying add location page to the Trainer
+2023-01-22 22:30:28.764 +05:30 [INF] Displaying add location page to the Trainer
+2023-01-22 22:30:31.691 +05:30 [INF] trainer with id 1111 added new location detail
+2023-01-22 22:30:31.691 +05:30 [INF] Displaying add location page to the Trainer
+2023-01-22 22:30:34.805 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:30:38.328 +05:30 [INF] Displaying update location page to the Trainer
+2023-01-22 22:30:43.204 +05:30 [INF] Displaying update location page to the Trainer
+2023-01-22 22:30:53.306 +05:30 [INF] Displaying update location page to the Trainer
+2023-01-22 22:30:58.511 +05:30 [INF] Displaying update location page to the Trainer
+2023-01-22 22:31:03.115 +05:30 [INF] Displaying update location page to the Trainer
+2023-01-22 22:31:08.211 +05:30 [INF] Displaying update location page to the Trainer
+2023-01-22 22:31:12.970 +05:30 [INF] Displaying update location page to the Trainer
+2023-01-22 22:31:20.624 +05:30 [INF] Displaying update location page to the Trainer
+2023-01-22 22:31:23.119 +05:30 [INF] trainer with id: 1111 updated location detail
+2023-01-22 22:31:23.119 +05:30 [INF] Displaying update location page to the Trainer
+2023-01-22 22:31:24.933 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:31:29.195 +05:30 [INF] Displaying update education details page to the Trainer
+2023-01-22 22:31:37.829 +05:30 [INF] Displaying update education details page to the Trainer
+2023-01-22 22:31:39.440 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:45:15.578 +05:30 [INF] new trainer enterted the app
+2023-01-22 22:45:17.138 +05:30 [INF] Displaying main page to the Trainer
+2023-01-22 22:45:19.775 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 22:45:26.904 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 22:45:30.562 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 22:45:31.518 +05:30 [INF] trainer with email: manoj@gmail.com logged in successfully
+2023-01-22 22:45:31.518 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:45:47.833 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:45:49.782 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:45:51.236 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:45:52.915 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:45:54.603 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:45:56.370 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:45:58.050 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:45:59.804 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:46:01.592 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:46:03.384 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:46:04.638 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:46:07.184 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:46:09.379 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:46:12.437 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:47:01.957 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:47:03.583 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:47:04.914 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:47:06.056 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:47:07.295 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:47:10.768 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:47:18.864 +05:30 [INF] trainer with id: 0 was verified
+2023-01-22 22:47:18.864 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:47:20.506 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:47:24.311 +05:30 [INF] Displaying update company details page to the Trainer
+2023-01-22 22:47:28.266 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:47:35.297 +05:30 [INF] Displaying add education details page to the Trainer
+2023-01-22 22:47:38.181 +05:30 [INF] Displaying add education details page to the Trainer
+2023-01-22 22:47:39.199 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:47:42.443 +05:30 [INF] Displaying add company details page to the Trainer
+2023-01-22 22:47:46.346 +05:30 [INF] Displaying add company details page to the Trainer
+2023-01-22 22:47:49.525 +05:30 [INF] Displaying add company details page to the Trainer
+2023-01-22 22:47:54.974 +05:30 [INF] Displaying add company details page to the Trainer
+2023-01-22 22:48:01.184 +05:30 [INF] Displaying add company details page to the Trainer
+2023-01-22 22:48:02.754 +05:30 [INF] trainer with id: 1111, added a new experience detail
+2023-01-22 22:48:02.754 +05:30 [INF] Displaying add company details page to the Trainer
+2023-01-22 22:48:04.656 +05:30 [INF] trainer with id: 1111, added a new experience detail
+2023-01-22 22:48:04.656 +05:30 [INF] Displaying add company details page to the Trainer
+2023-01-22 22:48:12.481 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:48:18.620 +05:30 [INF] Displaying update company details page to the Trainer
+2023-01-22 22:48:21.388 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:48:30.870 +05:30 [INF] Displaying delete skill page to the Trainer
+2023-01-22 22:48:33.065 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:48:36.118 +05:30 [INF] Displaying add company details page to the Trainer
+2023-01-22 22:48:37.960 +05:30 [INF] trainer with id: 1111, added a new experience detail
+2023-01-22 22:48:37.960 +05:30 [INF] Displaying add company details page to the Trainer
+2023-01-22 22:48:43.587 +05:30 [INF] Displaying add company details page to the Trainer
+2023-01-22 22:48:44.287 +05:30 [INF] trainer with id: 1111, added a new experience detail
+2023-01-22 22:48:44.287 +05:30 [INF] Displaying add company details page to the Trainer
+2023-01-22 22:48:45.865 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 22:48:48.899 +05:30 [INF] Displaying update company details page to the Trainer
+2023-01-22 23:02:42.444 +05:30 [INF] new trainer enterted the app
+2023-01-22 23:02:47.353 +05:30 [INF] Displaying main page to the Trainer
+2023-01-22 23:02:48.692 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 23:02:55.876 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 23:03:00.672 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 23:03:01.606 +05:30 [INF] trainer with email: manoj@gmail.com logged in successfully
+2023-01-22 23:03:01.606 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:03:09.657 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:03:15.178 +05:30 [INF] trainer with id: 0 was verified
+2023-01-22 23:03:15.178 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:03:16.072 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:03:32.225 +05:30 [INF] Displaying delete skill page to the Trainer
+2023-01-22 23:03:35.960 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:03:38.302 +05:30 [INF] Displaying update/add skills page to the Trainer
+2023-01-22 23:03:41.796 +05:30 [INF] Displaying update/add skills page to the Trainer
+2023-01-22 23:03:42.666 +05:30 [INF] trainer with id: 1111 added new skill detail
+2023-01-22 23:03:42.667 +05:30 [INF] Displaying update/add skills page to the Trainer
+2023-01-22 23:03:45.013 +05:30 [INF] Displaying update/add skills page to the Trainer
+2023-01-22 23:03:45.406 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:03:47.663 +05:30 [INF] Displaying delete skill page to the Trainer
+2023-01-22 23:04:10.794 +05:30 [INF] Displaying delete skill page to the Trainer
+2023-01-22 23:04:12.129 +05:30 [INF] trainer with id: 1111 deleted one skill detail
+2023-01-22 23:04:12.129 +05:30 [INF] Displaying delete skill page to the Trainer
+2023-01-22 23:25:07.116 +05:30 [INF] new trainer enterted the app
+2023-01-22 23:25:08.354 +05:30 [INF] Displaying main page to the Trainer
+2023-01-22 23:25:09.659 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 23:25:13.396 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 23:25:17.204 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 23:25:18.365 +05:30 [INF] trainer with email: manoj@gmail.com logged in successfully
+2023-01-22 23:25:18.365 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:25:23.976 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:25:31.348 +05:30 [INF] trainer with id: 0 was verified
+2023-01-22 23:25:31.348 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:25:38.635 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:25:44.693 +05:30 [INF] Displaying view complete profile page to the Trainer
+2023-01-22 23:28:20.380 +05:30 [INF] new trainer enterted the app
+2023-01-22 23:28:20.974 +05:30 [INF] Displaying main page to the Trainer
+2023-01-22 23:28:21.444 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 23:28:26.824 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 23:28:30.684 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 23:28:31.476 +05:30 [INF] trainer with email: manoj@gmail.com logged in successfully
+2023-01-22 23:28:31.476 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:28:36.653 +05:30 [INF] trainer with id: 0 was verified
+2023-01-22 23:28:36.653 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:28:37.542 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:28:38.902 +05:30 [INF] Displaying view complete profile page to the Trainer
+2023-01-22 23:35:11.716 +05:30 [INF] new trainer enterted the app
+2023-01-22 23:35:13.416 +05:30 [INF] Displaying main page to the Trainer
+2023-01-22 23:35:15.145 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 23:35:22.207 +05:30 [INF] Displaying sign page to the Trainer
+2023-01-22 23:35:57.295 +05:30 [ERR] new trainer with id: 0 entered inncorrect sign up details
+2023-01-22 23:35:57.295 +05:30 [INF] Displaying sign page to the Trainer
+2023-01-22 23:36:01.268 +05:30 [INF] Displaying sign page to the Trainer
+2023-01-22 23:36:02.397 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:36:14.233 +05:30 [INF] Trainer exited the application
+2023-01-22 23:36:18.750 +05:30 [INF] new trainer enterted the app
+2023-01-22 23:36:19.729 +05:30 [INF] Displaying main page to the Trainer
+2023-01-22 23:36:20.322 +05:30 [INF] Displaying sign page to the Trainer
+2023-01-22 23:36:24.498 +05:30 [INF] new trainer with id: 0 signed up successfully
+2023-01-22 23:36:24.499 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 23:36:30.671 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 23:36:35.374 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 23:36:36.756 +05:30 [INF] trainer with email: manoj@gmail.com logged in successfully
+2023-01-22 23:36:36.756 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:36:46.054 +05:30 [INF] trainer with id: 0 was verified
+2023-01-22 23:36:46.054 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:36:46.725 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:39:49.340 +05:30 [INF] new trainer enterted the app
+2023-01-22 23:39:50.543 +05:30 [INF] Displaying main page to the Trainer
+2023-01-22 23:40:14.731 +05:30 [INF] Displaying main page to the Trainer
+2023-01-22 23:40:16.248 +05:30 [INF] Displaying sign page to the Trainer
+2023-01-22 23:40:22.115 +05:30 [ERR] new trainer with id: 0 entered inncorrect sign up details
+2023-01-22 23:40:22.115 +05:30 [INF] Displaying sign page to the Trainer
+2023-01-22 23:40:26.912 +05:30 [INF] Displaying sign page to the Trainer
+2023-01-22 23:40:29.698 +05:30 [INF] Displaying sign page to the Trainer
+2023-01-22 23:40:34.578 +05:30 [INF] Displaying sign page to the Trainer
+2023-01-22 23:41:51.090 +05:30 [INF] new trainer enterted the app
+2023-01-22 23:41:51.989 +05:30 [INF] Displaying main page to the Trainer
+2023-01-22 23:41:52.277 +05:30 [INF] Displaying sign page to the Trainer
+2023-01-22 23:41:58.091 +05:30 [ERR] new trainer with id: 0 entered inncorrect sign up details
+2023-01-22 23:41:58.091 +05:30 [INF] Displaying sign page to the Trainer
+2023-01-22 23:42:01.693 +05:30 [INF] Displaying sign page to the Trainer
+2023-01-22 23:42:09.580 +05:30 [INF] Displaying sign page to the Trainer
+2023-01-22 23:42:12.205 +05:30 [INF] Displaying sign page to the Trainer
+2023-01-22 23:42:13.971 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:43:54.246 +05:30 [INF] trainer with id: 0 was verified
+2023-01-22 23:43:54.246 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:43:55.189 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:44:02.293 +05:30 [INF] Displaying view complete profile page to the Trainer
+2023-01-22 23:44:14.056 +05:30 [INF] new trainer enterted the app
+2023-01-22 23:46:20.162 +05:30 [INF] Displaying main page to the Trainer
+2023-01-22 23:46:22.642 +05:30 [INF] Displaying sign page to the Trainer
+2023-01-22 23:46:36.933 +05:30 [INF] new trainer with id: 0 signed up successfully
+2023-01-22 23:46:36.933 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 23:46:41.589 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 23:46:46.135 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 23:46:48.086 +05:30 [INF] trainer with email: manoj@gmail.com logged in successfully
+2023-01-22 23:46:48.086 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:47:04.420 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:47:10.061 +05:30 [INF] trainer with id: 0 was verified
+2023-01-22 23:47:10.062 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:47:11.263 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:47:14.014 +05:30 [INF] Displaying profile page to the Trainer
+2023-01-22 23:47:17.079 +05:30 [INF] Displaying profile page to the Trainer
+2023-01-22 23:47:23.545 +05:30 [INF] Displaying profile page to the Trainer
+2023-01-22 23:47:31.084 +05:30 [INF] Displaying profile page to the Trainer
+2023-01-22 23:47:46.703 +05:30 [INF] Displaying profile page to the Trainer
+2023-01-22 23:47:58.613 +05:30 [INF] Displaying profile page to the Trainer
+2023-01-22 23:48:51.741 +05:30 [INF] new trainer enterted the app
+2023-01-22 23:48:54.715 +05:30 [INF] Displaying main page to the Trainer
+2023-01-22 23:48:55.843 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 23:49:02.827 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 23:49:06.865 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 23:49:08.222 +05:30 [INF] trainer with email: manoj@gmail.com logged in successfully
+2023-01-22 23:49:08.223 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:49:13.046 +05:30 [INF] trainer with id: 0 was verified
+2023-01-22 23:49:13.046 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:49:17.654 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:49:19.451 +05:30 [INF] Displaying view complete profile page to the Trainer
+2023-01-22 23:50:40.682 +05:30 [INF] new trainer enterted the app
+2023-01-22 23:50:41.301 +05:30 [INF] Displaying main page to the Trainer
+2023-01-22 23:50:42.236 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 23:50:49.450 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 23:50:54.278 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 23:50:55.548 +05:30 [INF] trainer with email: manoj@gmail.com logged in successfully
+2023-01-22 23:50:55.548 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:51:04.195 +05:30 [INF] trainer with id: 0 was verified
+2023-01-22 23:51:04.195 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:51:04.843 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:51:06.505 +05:30 [INF] Displaying view complete profile page to the Trainer
+2023-01-22 23:51:32.277 +05:30 [INF] Displaying view complete profile page to the Trainer
+2023-01-22 23:51:36.403 +05:30 [INF] Displaying view complete profile page to the Trainer
+2023-01-22 23:51:38.103 +05:30 [INF] Displaying view complete profile page to the Trainer
+2023-01-22 23:52:17.302 +05:30 [INF] new trainer enterted the app
+2023-01-22 23:52:18.112 +05:30 [INF] Displaying main page to the Trainer
+2023-01-22 23:52:18.584 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 23:52:27.246 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 23:52:31.721 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 23:52:33.432 +05:30 [INF] trainer with email: manoj@gmail.com logged in successfully
+2023-01-22 23:52:33.432 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:52:40.738 +05:30 [INF] trainer with id: 0 was verified
+2023-01-22 23:52:40.739 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:52:41.293 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:52:44.179 +05:30 [INF] Displaying view complete profile page to the Trainer
+2023-01-22 23:52:45.730 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:52:49.368 +05:30 [INF] Displaying profile page to the Trainer
+2023-01-22 23:52:52.051 +05:30 [INF] Displaying profile page to the Trainer
+2023-01-22 23:52:56.245 +05:30 [INF] Displaying profile page to the Trainer
+2023-01-22 23:53:01.486 +05:30 [INF] Displaying profile page to the Trainer
+2023-01-22 23:53:16.760 +05:30 [INF] Displaying profile page to the Trainer
+2023-01-22 23:53:20.018 +05:30 [INF] Displaying profile page to the Trainer
+2023-01-22 23:53:23.592 +05:30 [INF] Displaying profile page to the Trainer
+2023-01-22 23:54:06.212 +05:30 [INF] trainer with id: 1111 updated their personal details
+2023-01-22 23:54:06.212 +05:30 [INF] Displaying profile page to the Trainer
+2023-01-22 23:54:08.052 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:54:11.427 +05:30 [INF] Displaying view complete profile page to the Trainer
+2023-01-22 23:54:14.127 +05:30 [INF] Displaying view complete profile page to the Trainer
+2023-01-22 23:54:15.692 +05:30 [INF] Displaying view complete profile page to the Trainer
+2023-01-22 23:54:16.595 +05:30 [INF] Displaying view complete profile page to the Trainer
+2023-01-22 23:54:48.583 +05:30 [INF] Trainer exited the application
+2023-01-22 23:54:53.145 +05:30 [INF] new trainer enterted the app
+2023-01-22 23:54:53.797 +05:30 [INF] Displaying main page to the Trainer
+2023-01-22 23:54:54.191 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 23:54:59.692 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 23:55:03.795 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 23:55:04.669 +05:30 [INF] trainer with email: manoj@gmail.com logged in successfully
+2023-01-22 23:55:04.669 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:55:09.445 +05:30 [INF] trainer with id: 0 was verified
+2023-01-22 23:55:09.445 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:55:10.581 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:55:16.676 +05:30 [INF] Displaying view complete profile page to the Trainer
+2023-01-22 23:58:59.287 +05:30 [INF] Displaying view complete profile page to the Trainer
+2023-01-22 23:59:00.658 +05:30 [INF] Trainer exited the application
+2023-01-22 23:59:04.973 +05:30 [INF] new trainer enterted the app
+2023-01-22 23:59:17.793 +05:30 [INF] Displaying main page to the Trainer
+2023-01-22 23:59:18.858 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 23:59:25.214 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 23:59:35.341 +05:30 [INF] Displying login page to the Trainer
+2023-01-22 23:59:36.301 +05:30 [INF] trainer with email: manoj@gmail.com logged in successfully
+2023-01-22 23:59:36.301 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:59:44.302 +05:30 [INF] trainer with id: 0 was verified
+2023-01-22 23:59:44.302 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:59:45.198 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-22 23:59:46.139 +05:30 [INF] Displaying view complete profile page to the Trainer

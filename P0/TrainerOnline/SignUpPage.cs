@@ -84,6 +84,11 @@ namespace UILayer
                         try
                         {
                             if (newSignUp.email == null || newSignUp.password == null) return "SignUpPage";
+                            if (!Validation.IsValidId(newSignUp.userid.ToString())) {
+                                Console.WriteLine("id is required, please press enter to enter your id");
+                                Console.ReadKey();
+                                return "SignUpPage";
+                            } 
                             else { 
                                 newSql.Adduser(newSignUp);
                                 newSignUp.email = "";

@@ -42,11 +42,29 @@ namespace UILayer
                     return "UserDetailsEditPage";
                 case "2":
                     Console.WriteLine("Enter your phone number [must contain 10 digits]");
-                    userUpdate.phone = Console.ReadLine();
+                    string newPhone = Console.ReadLine();
+                    if (Validation.IsValidPhone(newPhone))
+                    {
+                        userUpdate.phone = newPhone;
+                    }
+                    else {
+                        userUpdate.phone = "";
+                        Console.WriteLine("Invalid format, please press enter to try again");
+                        Console.ReadKey();
+                    }
                     return "UserDetailsEditPage";
                 case "3":
                     Console.WriteLine("Enter your website url");
-                    userUpdate.website = Console.ReadLine();
+                    string newWebsite = Console.ReadLine();
+                    if (Validation.IsValidWebsite(newWebsite)) { 
+                        userUpdate.website = newWebsite;
+                    }
+                    else
+                    {
+                        userUpdate.website = "";
+                        Console.WriteLine("Invalid format, please press enter to try again");
+                        Console.ReadKey();
+                    }
                     return "UserDetailsEditPage";
                 case "4":
                     Console.WriteLine("Tell more about yourself");
@@ -54,7 +72,17 @@ namespace UILayer
                     return "UserDetailsEditPage";
                 case "5":
                     Console.WriteLine("Enter your gender");
-                    userUpdate.gender = Console.ReadLine();
+                    string NewGender = Console.ReadLine();
+                    if(Validation.IsValidGender(NewGender))
+                    {
+                        userUpdate.gender = NewGender;
+                    }
+                    else
+                    {
+                        userUpdate.gender = "";
+                        Console.WriteLine("Invalid format, please press enter to try again\r");
+                        Console.ReadKey();
+                    }
                     return "UserDetailsEditPage";
                 case "6":
                     try

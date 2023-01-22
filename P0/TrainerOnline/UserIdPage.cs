@@ -18,6 +18,7 @@ namespace UILayer
     Press [1] - to enter your email {newUserProfile.email}
     your id is, {newUserProfile.userid}
     Press [2] - to verify
+    Press [v] - to view your complete profile
 
     -----------Update your existing details-----------
 
@@ -52,6 +53,17 @@ namespace UILayer
         {
             string input = Console.ReadLine();
             switch (input) {
+                case "v":
+                    if (Validation.IsValidId(UserIdPage.newUserProfile.userid.ToString()))
+                    {
+                        return "ViewCompleteProfilePage";
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please verify your account first, please press enter to continue");
+                        Console.ReadKey();
+                        return "UserIdPage";
+                    }
                 case "1":
                     Console.WriteLine("Enter your email for verification [required]");
                     
@@ -78,29 +90,137 @@ namespace UILayer
                     newUserProfile.userid = newSql.GetUserId(newUserProfile.email);
                     return "UserIdPage";
                 case "3":
-                    return "UserDetailsEditPage";
+                    if (Validation.IsValidId(UserIdPage.newUserProfile.userid.ToString()))
+                    {
+                        return "UserDetailsEditPage";
+                    }
+                    else 
+                    {
+                        Console.WriteLine("Please verify your account first, please press enter to continue");
+                        Console.ReadKey();
+                        return "UserIdPage";
+                    }
                 case "4":
-                    return "UpdateSkillPage";
+                    if (Validation.IsValidId(UserIdPage.newUserProfile.userid.ToString()))
+                    {
+                        return "UpdateSkillPage";
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please verify your account first, please press enter to continue");
+                        Console.ReadKey();
+                        return "UserIdPage";
+                    }
                 case "5":
-                    return "UpdateLocationPage";
+                    if (Validation.IsValidId(UserIdPage.newUserProfile.userid.ToString()))
+                    {
+                        return "UpdateLocationPage";
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please verify your account first, please press enter to continue");
+                        Console.ReadKey();
+                        return "UserIdPage";
+                    }
                 case "6":
-                    return "UpdateEducationPage";
+                    if (Validation.IsValidId(UserIdPage.newUserProfile.userid.ToString()))
+                    {
+                        return "UpdateEducationPage";
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please verify your account first, please press enter to continue");
+                        Console.ReadKey();
+                        return "UserIdPage";
+                    }
                 case "7":
-                    return "UpdateCompanyPage";
+                    if (Validation.IsValidId(UserIdPage.newUserProfile.userid.ToString()))
+                    {
+                        return "UpdateCompanyPage";
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please verify your account first, please press enter to continue");
+                        Console.ReadKey();
+                        return "UserIdPage";
+                    }
                 case "8":
-                    return "AddSkillPage";
+                    if (Validation.IsValidId(UserIdPage.newUserProfile.userid.ToString()))
+                    {
+                        return "AddSkillPage";
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please verify your account first, please press enter to continue");
+                        Console.ReadKey();
+                        return "UserIdPage";
+                    }
                 case "9":
-                    return "AddLocationPage";
+                    if (Validation.IsValidId(UserIdPage.newUserProfile.userid.ToString()))
+                    {
+                        return "AddLocationPage";
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please verify your account first, please press enter to continue");
+                        Console.ReadKey();
+                        return "UserIdPage";
+                    }
                 case "10":
-                    return "AddEducationPage";
+                    if (Validation.IsValidId(UserIdPage.newUserProfile.userid.ToString()))
+                    {
+                        return "AddEducationPage";
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please verify your account first, please press enter to continue");
+                        Console.ReadKey();
+                        return "UserIdPage";
+                    }
                 case "11":
-                    return "AddCompanyPage";
+                    if (Validation.IsValidId(UserIdPage.newUserProfile.userid.ToString()))
+                    {
+                        return "AddCompanyPage";
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please verify your account first, please press enter to continue");
+                        Console.ReadKey();
+                        return "UserIdPage";
+                    }
                 case "12":
-                    return "DeleteSkillsPage";
+                    if (Validation.IsValidId(UserIdPage.newUserProfile.userid.ToString()))
+                    {
+                        return "DeleteSkillsPage";
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please verify your account first, please press enter to continue");
+                        Console.ReadKey();
+                        return "UserIdPage";
+                    }
                 case "13":
-                    return "DeleteEducationPage";
+                    if (Validation.IsValidId(UserIdPage.newUserProfile.userid.ToString()))
+                    {
+                        return "DeleteEducationPage";
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please verify your account first, please press enter to continue");
+                        Console.ReadKey();
+                        return "UserIdPage";
+                    }
                 case "14":
-                    return "DeleteCompanyPage";
+                    if (Validation.IsValidId(UserIdPage.newUserProfile.userid.ToString()))
+                    {
+                        return "DeleteCompanyPage";
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please verify your account first, please press enter to continue");
+                        Console.ReadKey();
+                        return "UserIdPage";
+                    }
                 case "15":
                     try
                     {
