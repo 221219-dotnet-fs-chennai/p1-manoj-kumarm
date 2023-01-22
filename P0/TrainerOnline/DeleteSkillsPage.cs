@@ -1,4 +1,5 @@
 ﻿using DataLayer;
+using Serilog;
 using UILayer;
 
 namespace TrainerOnline
@@ -46,8 +47,19 @@ namespace TrainerOnline
                     newSkill.skillName = Console.ReadLine();
                     return "DeleteSkillsPage";
                 case "2":
-                    newSql.DeleteSkill(newSkill);
-                    Console.WriteLine("deleting...");
+                    try
+                    {
+                        newSql.DeleteSkill(newSkill);
+                        Console.WriteLine("deleting...");
+                        Log.Information($"trainer with id: {UserIdPage.newUserProfile.userid} deleted one skill detail");
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                        Log.Error($"trainer with id: {UserIdPage.newUserProfile.userid} could not delete skill detail");
+
+                    }
                     return "DeleteSkillsPage";
                 case "b":
                     return "UserIdPage";

@@ -1,4 +1,5 @@
 ﻿using DataLayer;
+using Serilog;
 using UILayer;
 
 namespace TrainerOnline
@@ -84,9 +85,17 @@ namespace TrainerOnline
                     NewEndDate = Console.ReadLine();
                     return "UpdateEducationPage";
                 case "6":
-                    newSql.UpdateEducation(UserIdPage.newUserProfile.userid, oldName, newName, oldDegree, newDegree, oldGpa, newGpa, oldStartDate, newStartDate, oldEndDate, NewEndDate);
-                    Console.WriteLine("saving...");
-                    Console.ReadKey();
+                    try
+                    {
+                        newSql.UpdateEducation(UserIdPage.newUserProfile.userid, oldName, newName, oldDegree, newDegree, oldGpa, newGpa, oldStartDate, newStartDate, oldEndDate, NewEndDate);
+                        Console.WriteLine("saving...");
+                        Log.Error($"trainer with id: {UserIdPage.newUserProfile.userid} updated education detail");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                        Log.Error($"trainer with id: {UserIdPage.newUserProfile.userid} could not update education detail");
+                    }
                     return "UpdateEducationPage";
                 case "b":
                     return "UserIdPage";

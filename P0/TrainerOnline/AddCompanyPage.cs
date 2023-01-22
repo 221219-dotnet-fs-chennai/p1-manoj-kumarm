@@ -1,4 +1,5 @@
 ﻿using DataLayer;
+using Serilog;
 using UILayer;
 
 namespace TrainerOnline
@@ -43,9 +44,15 @@ namespace TrainerOnline
                     newCompany.enddate = Console.ReadLine();
                     return "AddCompanyPage";
                 case "5":
-                    newSql.AddCompany(UserIdPage.newUserProfile.userid, newCompany);
-                    Console.WriteLine("saving...");
-                    Console.ReadKey();
+                    try {
+                        newSql.AddCompany(UserIdPage.newUserProfile.userid, newCompany);
+                        Console.WriteLine("saving...");
+                        Log.Information($"trainer with id: {UserIdPage.newUserProfile.userid}, added a new experience detail");
+                    }
+                    catch(Exception ex) { 
+                        Console.WriteLine(ex.Message);
+                        Log.Error($"trainer with id: {UserIdPage.newUserProfile.userid} could not add new education detail");
+                    }
                     return "AddCompanyPage";
                 case "b":
                     return "UserIdPage";

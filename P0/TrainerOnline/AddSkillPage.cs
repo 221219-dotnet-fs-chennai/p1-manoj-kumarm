@@ -1,4 +1,5 @@
 ﻿using DataLayer;
+using Serilog;
 using UILayer;
 
 namespace TrainerOnline
@@ -28,9 +29,20 @@ namespace TrainerOnline
                     newSkill.skillName = Console.ReadLine();
                     return "AddSkillPage";
                 case "2":
-                    newSkill.trainerskillid = UserIdPage.newUserProfile.userid;
-                    newSql.AddSkills(newSkill);
-                    Console.WriteLine("saving...");
+                    try
+                    {
+                        newSkill.trainerskillid = UserIdPage.newUserProfile.userid;
+                        newSql.AddSkills(newSkill);
+                        Console.WriteLine("saving...");
+                        Log.Information($"trainer with id: {UserIdPage.newUserProfile.userid} added new skill detail");
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                        Log.Error($"trainer with id: {UserIdPage.newUserProfile.userid} could not add skill detail");
+
+                    }
                     return "AddSkillPage";
                 case "b":
                     return "UserIdPage";

@@ -1,4 +1,5 @@
 ﻿using DataLayer;
+using Serilog;
 using UILayer;
 
 namespace TrainerOnline
@@ -44,8 +45,18 @@ namespace TrainerOnline
                     newEducation.startDate = Console.ReadLine();
                     return "DeleteEducationPage";
                 case "2":
-                    newSql.DeleteEducation(UserIdPage.newUserProfile.userid,newEducation.startDate);
-                    Console.WriteLine("deleting...");
+                    try
+                    {
+                        newSql.DeleteEducation(UserIdPage.newUserProfile.userid,newEducation.startDate);
+                        Console.WriteLine("deleting...");
+                        Log.Information($"trainer with id: {UserIdPage.newUserProfile.userid} deleted one education detail");
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                        Log.Error($"trainer with id: {UserIdPage.newUserProfile.userid} could not delete education detail");
+                    }
                     return "DeleteEducationPage";
                 case "b":
                     return "UserIdPage";

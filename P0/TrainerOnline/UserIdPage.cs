@@ -1,4 +1,5 @@
 ﻿using DataLayer;
+using Serilog;
 using TrainerOnline;
 
 namespace UILayer
@@ -65,8 +66,12 @@ namespace UILayer
                     }
                     if (!newSql.CheckEmailExists(newUserProfile.email))
                     {
-                        return "SignUpPage";
+                        Log.Error($"trainer with id: {UserIdPage.newUserProfile.userid} was not able to verify");
+                        Console.WriteLine("incorrect email, please press enter to try again else try signing up");
+                        Console.ReadKey();
+                        return "UserIdPage";
                     }
+                    Log.Information($"trainer with id: {UserIdPage.newUserProfile.userid} was verified");
                     return "UserIdPage";
                 case "2":
                     Console.WriteLine("verifying...");

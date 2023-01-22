@@ -1,4 +1,5 @@
 ﻿using DataLayer;
+using Serilog;
 using UILayer;
 
 namespace TrainerOnline
@@ -33,9 +34,18 @@ namespace TrainerOnline
                     newLocation.city = Console.ReadLine();
                     return "AddLocationPage";
                 case "3":
-                    newSql.AddNewUserLocation(UserIdPage.newUserProfile.userid, newLocation);
-                    Console.WriteLine("saving...");
-                    Console.ReadKey();  
+                    try
+                    {
+                        newSql.AddNewUserLocation(UserIdPage.newUserProfile.userid, newLocation);
+                        Console.WriteLine("saving...");
+                        Log.Information($"trainer with id {UserIdPage.newUserProfile.userid} added new location detail");
+                    }
+                    catch (Exception ex)
+                    {
+
+                        Console.WriteLine(ex.Message);
+                        Log.Error($"trainer with id {UserIdPage.newUserProfile.userid} could not add location detail");
+                    }
                     return "AddLocationPage";
                 case "b":
                     return "UserIdPage";

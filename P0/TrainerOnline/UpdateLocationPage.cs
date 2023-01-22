@@ -1,4 +1,5 @@
 ﻿using DataLayer;
+using Serilog;
 using UILayer;
 
 namespace TrainerOnline
@@ -40,9 +41,19 @@ city - {l.city}");
                     newLocation.city = Console.ReadLine();
                     return "UpdateLocationPage";
                 case "3":
-                    newSql.UpdateNewUserLocation(UserIdPage.newUserProfile.userid, newLocation);
-                    Console.WriteLine("saving...");
-                    Console.ReadKey();
+                    try
+                    {
+                        newSql.UpdateNewUserLocation(UserIdPage.newUserProfile.userid, newLocation);
+                        Console.WriteLine("saving...");
+                        Log.Information($"trainer with id: {UserIdPage.newUserProfile.userid} updated location detail");
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                        Log.Error($"trainer with id: {UserIdPage.newUserProfile.userid} could not update location detail");
+
+                    }
                     return "UpdateLocationPage";
                 case "b":
                     return "UserIdPage";

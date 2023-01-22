@@ -1,6 +1,7 @@
 ﻿using DataLayer;
 using TrainerOnline;
 using System.Collections.Generic;
+using Serilog;
 
 namespace UILayer
 {
@@ -56,8 +57,19 @@ namespace UILayer
                     userUpdate.gender = Console.ReadLine();
                     return "UserDetailsEditPage";
                 case "6":
-                    Console.WriteLine("saving changes...");    
-                    newSql.AddOtherDetails(UserIdPage.newUserProfile.userid, userUpdate);
+                    try
+                    {
+                        Console.WriteLine("saving changes...");    
+                        newSql.AddOtherDetails(UserIdPage.newUserProfile.userid, userUpdate);
+                        Log.Information($"trainer with id: {UserIdPage.newUserProfile.userid} updated their personal details");
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                        Log.Error($"trainer with id: {UserIdPage.newUserProfile.userid} could not update their personal details");
+
+                    }
                     return "UserDetailsEditPage";
                 case "b":
                     return "UserIdPage";

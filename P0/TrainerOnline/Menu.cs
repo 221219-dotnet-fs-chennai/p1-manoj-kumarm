@@ -38,9 +38,6 @@ namespace UILayer
                         return "LoginPage";
                     case "m":
                         return "Menu";
-                    /*case "e": // need to remove this after completion
-                        newSql.GetAllPersons().ForEach(user => Console.WriteLine(user));
-                        return "";*/
                     default:
                         Console.WriteLine("Please input a valid response");
                         Console.WriteLine("Please press \"Enter\" to continue");

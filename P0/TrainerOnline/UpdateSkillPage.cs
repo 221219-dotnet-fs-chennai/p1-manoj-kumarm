@@ -1,4 +1,5 @@
 ﻿using DataLayer;
+using Serilog;
 using UILayer;
 
 namespace TrainerOnline
@@ -38,12 +39,25 @@ namespace TrainerOnline
             switch (userinput)
             {
                 case "1":
-                    Console.WriteLine("enter the new skill name");
-                    string newskill = Console.ReadLine();
-                    Console.WriteLine("enter the old skill name");
-                    string oldSkill = Console.ReadLine();
-                    newSql.UpdateNewSkills(UserIdPage.newUserProfile.userid, oldSkill, newskill);
-                    Console.WriteLine("saving...");
+                    try
+                    {
+                        Console.WriteLine("enter the new skill name");
+                        string newskill = Console.ReadLine();
+                        Console.WriteLine("enter the old skill name");
+                        string oldSkill = Console.ReadLine();
+                        newSql.UpdateNewSkills(UserIdPage.newUserProfile.userid, oldSkill, newskill);
+                        Console.WriteLine("saving...");
+                        Log.Error($"trainer with id: {UserIdPage.newUserProfile.userid} updated skill detail");
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        Console.WriteLine(ex.Message);
+                        Log.Error($"trainer with id: {UserIdPage.newUserProfile.userid} could not update skill detail");
+
+                    }
+                    
                     return "UpdateSkillPage";
                 case "b":
                     return "UserIdPage";

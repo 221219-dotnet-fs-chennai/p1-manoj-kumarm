@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using DataLayer;
+using Serilog;
 using TrainerOnline;
 
 namespace UILayer
@@ -47,9 +48,11 @@ namespace UILayer
                             }
                             if (newSql.CheckEmailExists(email))
                             {
+                                Log.Information($"new trainer with id: {UserIdPage.newUserProfile.userid} signed up successfully");
                                 return "LoginPage";
                             }
-                            else { 
+                            else {
+                                Log.Error($"new trainer with id: {UserIdPage.newUserProfile.userid} entered inncorrect sign up details");
                                 return "SignUpPage";                                
                             }
                         }

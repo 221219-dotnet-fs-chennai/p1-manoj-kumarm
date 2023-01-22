@@ -1,4 +1,5 @@
-﻿using UILayer;
+﻿using Serilog;
+using UILayer;
 namespace TrainerOnline
 {
     internal class LandingPage : ILayout
@@ -6,6 +7,7 @@ namespace TrainerOnline
         public void Display()
         {
             try {
+                Log.Information("new trainer enterted the app");
                 Console.WriteLine(@"                                                            =======================================================     
                                                                                   MENTOR ONLINE
                                                             =======================================================     

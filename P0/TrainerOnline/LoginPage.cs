@@ -1,4 +1,5 @@
 ﻿using DataLayer;
+using Serilog;
 using System.Data;
 using TrainerOnline;
 
@@ -76,11 +77,13 @@ namespace UILayer
                     if (newLogin.email != null || newLogin.password != null) {
                         if (newSql.CheckUserExists(newLogin.email, newLogin.password))
                         {
+                            Log.Information($"trainer with email: {newLogin.email} logged in successfully");
                             return "UserIdPage";
                         }
                         else
                         {
                             Console.WriteLine("Email or Password does'nt match try again, press enter to try again");
+                            Log.Error($"trainer with email: {newLogin.email} entered inncorrect login details");
                             Console.ReadKey();
                             return "LoginPage";
                         }

@@ -1,4 +1,5 @@
-﻿using UILayer;
+﻿using Serilog;
+using UILayer;
 
 namespace TrainerOnline
 {
@@ -15,6 +16,7 @@ namespace TrainerOnline
             string userinput = Console.ReadLine();
             switch (userinput) {
                 case "0":
+                    Log.Information("trainer deleted their account permanently");
                     return "Exit";
                 default:
                     Console.WriteLine("enter a valid command");
