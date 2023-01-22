@@ -60,16 +60,54 @@ namespace TrainerOnline
                     newTitle = Console.ReadLine();
                     return "UpdateCompanyPage";
                 case "3":
-                    Console.WriteLine("enter old start date");
-                    oldStartDate = Console.ReadLine();
-                    Console.WriteLine("enter new new start date");
+                    Console.WriteLine("enter old start year");
+                    string Oldyear = Console.ReadLine();
+                    if (Validation.IsValidYear(Oldyear)) {
+                        oldStartDate = Oldyear;
+                    }
+                    else
+                    {
+                        oldStartDate = "";
+                        Console.WriteLine("invalid format, please press enter to try again");
+                        Console.ReadKey();
+                    }
+                    Console.WriteLine("enter new start year");
+                    string Newyear = Console.ReadLine();
+                    if (Validation.IsValidYear(Newyear))
+                    {
+                        newStartDate = Newyear;
+                    }
+                    else
+                    {
+                        newStartDate = "";
+                        Console.WriteLine("invalid format, please press enter to try again");
+                        Console.ReadKey();
+                    }
                     newStartDate = Console.ReadLine();
                     return "UpdateCompanyPage";
                 case "4":
-                    Console.WriteLine("enter old end date");
-                    oldEndDate = Console.ReadLine();
+                    Console.WriteLine("enter old end year");
+                    string OldEndYear = Console.ReadLine();
+                    if (Validation.IsValidYear(OldEndYear)) {
+                        oldEndDate = OldEndYear;
+                    }
+                    else {
+                        oldEndDate = "";
+                        Console.WriteLine("invalid format, please press enter to try again");
+                        Console.ReadKey();
+                    }
                     Console.WriteLine("enter new end year");
-                    NewEndDate = Console.ReadLine();
+                    //NewEndDate = Console.ReadLine();
+                    string newEndYear = Console.ReadLine();
+                    if (Validation.IsValidYear(newEndYear)) {
+                        NewEndDate = newEndYear;
+                    }
+                    else
+                    {
+                        NewEndDate = "";
+                        Console.WriteLine("Invalid format, please press enter to try again");
+                        Console.ReadKey();
+                    }
                     return "UpdateCompanyPage";
                 case "5":
                     try

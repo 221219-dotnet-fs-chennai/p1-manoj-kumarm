@@ -42,7 +42,16 @@ namespace TrainerOnline
             {
                 case "1":
                     Console.WriteLine("enter the start year of any one of the education details");
-                    newEducation.startDate = Console.ReadLine();
+                    string StartYear = Console.ReadLine();  
+                    if (Validation.IsValidYear(StartYear)) {
+                        newEducation.startDate = StartYear;
+                    }
+                    else
+                    {
+                        newEducation.startDate = "";
+                        Console.WriteLine("invalid format, please press enter to try again");
+                        Console.ReadKey();
+                    }
                     return "DeleteEducationPage";
                 case "2":
                     try

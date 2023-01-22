@@ -37,11 +37,30 @@ namespace TrainerOnline
                     return "AddCompanyPage";
                 case "3":
                     Console.WriteLine("Enter the start year");
-                    newCompany.startdate = Console.ReadLine();
+                    string StartDate = Console.ReadLine();
+                    if (Validation.IsValidYear(StartDate))
+                    {
+                        newCompany.startdate = StartDate;
+                    }
+                    else {
+                        newCompany.startdate = "";
+                        Console.WriteLine("Invalid format, press enter to try again");
+                        Console.ReadKey();
+                    }
                     return "AddCompanyPage";
                 case "4":
                     Console.WriteLine("Enter the end year");
-                    newCompany.enddate = Console.ReadLine();
+                    string EndDate = Console.ReadLine();
+                    if (Validation.IsValidYear(EndDate))
+                    {
+                        newCompany.enddate = EndDate;
+                    }
+                    else
+                    {
+                        newCompany.enddate = "";
+                        Console.WriteLine("Invalid format, press enter to try again");
+                        Console.ReadKey();
+                    }
                     return "AddCompanyPage";
                 case "5":
                     try {

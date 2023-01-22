@@ -41,7 +41,16 @@ namespace TrainerOnline
             {
                 case "1":
                     Console.WriteLine("enter the start year of any one of the experiences");
-                    newCompany.startdate = Console.ReadLine();
+                    string StartYear = Console.ReadLine();
+                    if (Validation.IsValidYear(StartYear)) { 
+                        newCompany.startdate = StartYear;
+                    }
+                    else
+                    {
+                        newCompany.startdate = "";
+                        Console.WriteLine("invalid format, please press enter to try again");
+                        Console.ReadKey();
+                    }
                     return "DeleteCompanyPage";
                 case "2":
                     try

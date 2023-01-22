@@ -115,5 +115,17 @@ namespace UILayer
                 return true;
             }
         }
+
+        internal static bool IsValidSkillName(string str) {
+            string pattern = @"^.{3,}$";
+            if (!Regex.IsMatch(str, pattern, RegexOptions.IgnoreCase))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace TrainerOnline
         {
 
             Console.WriteLine($@"-------------------------Add Location-------------------------
-    press [1] to enter your zipcode - {newLocation.zipcode}
+    press [1] to enter your zipcode [format: 560001, 601245] - {newLocation.zipcode}
     press [2] to enter your city name - {newLocation.city}
     press [3] to save changes
     press [b] to go back
@@ -27,7 +27,16 @@ namespace TrainerOnline
             {
                 case "1":
                     Console.WriteLine("enter the zipcode");
-                    newLocation.zipcode = Console.ReadLine();
+                    string ZipCode = Console.ReadLine();
+                    if (Validation.IsValidZipcode(ZipCode)) {
+                        newLocation.zipcode = ZipCode;
+                    }
+                    else
+                    {
+                        newLocation.zipcode = "";
+                        Console.WriteLine("Invalid format, please press enter to try again");
+                        Console.ReadKey(); 
+                    }
                     return "AddLocationPage";
                 case "2":
                     Console.WriteLine("enter the city");

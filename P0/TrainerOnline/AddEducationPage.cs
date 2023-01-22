@@ -37,15 +37,43 @@ namespace TrainerOnline
                     return "AddEducationPage";
                 case "3":
                     Console.WriteLine("enter your gpa");
-                    newEducation.gpa = Console.ReadLine();
+                    string Gpa = Console.ReadLine();    
+                    if (Validation.IsValidGpa(Gpa)) {
+                        newEducation.gpa = Gpa;
+                    }
+                    else
+                    {
+                        newEducation.gpa = "";
+                        Console.WriteLine("Invalid format, press enter to try again");
+                        Console.ReadKey();
+                    }
                     return "AddEducationPage";
                 case "4":
                     Console.WriteLine("enter your start year");
-                    newEducation.startDate = Console.ReadLine();
+                    string StartYear = Console.ReadLine();
+                    if (Validation.IsValidYear(StartYear)) { 
+                        newEducation.startDate = StartYear;
+                    }
+                    else
+                    {
+                        newEducation.startDate = "";
+                        Console.WriteLine("Invalid format, press enter to try again");
+                        Console.ReadKey();
+                    }
                     return "AddEducationPage";
                 case "5":
                     Console.WriteLine("enter your end year");
-                    newEducation.endDate = Console.ReadLine();
+                    string EndYear = Console.ReadLine();
+                    if (Validation.IsValidYear(EndYear))
+                    {
+                        newEducation.endDate = EndYear;
+                    }
+                    else
+                    {
+                        newEducation.endDate = "";
+                        Console.WriteLine("Invalid format, press enter to try again");
+                        Console.ReadKey();
+                    }
                     return "AddEducationPage";
                 case "6":
                     try { 

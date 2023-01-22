@@ -68,7 +68,18 @@ namespace TrainerOnline
                     return "UpdateEducationPage";
                 case "3":
                     Console.WriteLine("enter your old gpa");
-                    oldGpa = Console.ReadLine();
+                    //oldGpa = Console.ReadLine();
+                    string OldGpa = Console.ReadLine();
+                    if (Validation.IsValidGpa(OldGpa)) {
+                        oldGpa = OldGpa;
+                    }
+                    else
+                    {
+                        oldGpa = "";
+                        Console.WriteLine("Invalid format, please press enter to try again");
+                        Console.ReadKey();
+                    }
+
                     Console.WriteLine("enter your new gpa");
                     newGpa = Console.ReadLine();
                     return "UpdateEducationPage";

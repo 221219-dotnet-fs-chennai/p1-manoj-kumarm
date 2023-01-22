@@ -44,7 +44,16 @@ namespace TrainerOnline
             {
                 case "1":
                     Console.WriteLine("enter the skill name");
-                    newSkill.skillName = Console.ReadLine();
+                    string SkillName = Console.ReadLine();
+                    if (Validation.IsValidSkillName(SkillName)) { 
+                        newSkill.skillName = SkillName;
+                    }
+                    else
+                    {
+                        newSkill.skillName = "";
+                        Console.WriteLine("invalid format, please press enter to try again");
+                        Console.ReadKey();
+                    }
                     return "DeleteSkillsPage";
                 case "2":
                     try
