@@ -24,6 +24,7 @@ namespace TrainerOnline
         public string UserOption()
         {
             List<UpdateDetails> newUserList = newSql.GetUserPersonalDetails(UserIdPage.newUserProfile.userid);
+            List<Location> newLocationList = newSql.GetUserLocation(UserIdPage.newUserProfile.userid);
             List<Skills> newSkillList = newSql.GetAllSkillsAsync(UserIdPage.newUserProfile.userid);
             List<Education> newEducationList = newSql.GetEducation(UserIdPage.newUserProfile.userid);
             List<Company> newCompanyList = newSql.GetCompany(UserIdPage.newUserProfile.userid);
@@ -35,6 +36,11 @@ namespace TrainerOnline
                     foreach (var item in newUserList)
                     {
                         newUserDetails += item.ToString();
+                    }
+                    string newUserLocation = "";
+                    foreach(var item in newLocationList)
+                    {
+                        newUserLocation += item.ToString();
                     }
                     string newUserSkills = "";
                     foreach (var item in newSkillList) {
@@ -52,6 +58,8 @@ namespace TrainerOnline
                     }
                     Console.WriteLine("-------------------------Personal Details-------------------------\n");
                     Console.WriteLine($"\t{newUserDetails}");
+                    Console.WriteLine("-------------------------Location Details-------------------------\n");
+                    Console.WriteLine($"\t{newUserLocation}");
                     Console.WriteLine("-------------------------Skill Details----------------------------\n");
                     Console.WriteLine($"\t{newUserSkills}");
                     Console.WriteLine("-------------------------Education Details------------------------\n");

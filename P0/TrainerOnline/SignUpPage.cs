@@ -48,11 +48,9 @@ namespace UILayer
                             }
                             if (newSql.CheckEmailExists(email))
                             {
-                                Log.Information($"new trainer with id: {UserIdPage.newUserProfile.userid} signed up successfully");
                                 return "LoginPage";
                             }
                             else {
-                                Log.Error($"new trainer with id: {UserIdPage.newUserProfile.userid} entered inncorrect sign up details");
                                 return "SignUpPage";                                
                             }
                         }
@@ -91,6 +89,7 @@ namespace UILayer
                             } 
                             else { 
                                 newSql.Adduser(newSignUp);
+                                Log.Information($"new trainer with email: {newSignUp.email} signed up successfully");
                                 newSignUp.email = "";
                                 newSignUp.password = "";
                                 newSignUp.userid = 0;

@@ -84,6 +84,7 @@ namespace TrainerOnline
                         Console.WriteLine("Invalid format, please press enter to try again");
                         Console.ReadKey();
                     }
+                    Console.WriteLine("enter your new gpa");
                     string NewGpa = Console.ReadLine();
                     if (Validation.IsValidGpa(NewGpa)) {
                         newGpa = NewGpa;

@@ -10,5 +10,10 @@ namespace DataLayer
     {
         public string zipcode;
         public string city;
+
+        public override string ToString()
+        {
+            return $"\nZipcode: {zipcode}\tCity: {city}";
+        }
     }
 }

@@ -55,7 +55,6 @@ namespace TrainerOnline
             }
             return list;
         }
-
         internal List<Company> GetCompany(int id) {
             List<Company> list = new List<Company>();
             string query = $"select [companyname], [title], [startyear], [endyear] from [trainer_company] where [trainercompanyid] = {id}";
@@ -938,7 +937,7 @@ namespace TrainerOnline
 
         }
         
-        // only for reference
+        
         internal bool CheckIdExists(int id) {
             using SqlConnection con = new(cs);
             try
@@ -999,7 +998,18 @@ namespace TrainerOnline
             }
             return isExists;
         }
-        internal List<UserId> GetAllPersons() {
+
+
+
+
+
+
+
+
+
+        // only for reference
+
+        /*internal List<UserId> GetAllPersons() {
             List<UserId> newList = new();
             using SqlConnection con = new(cs);
             string query = "select [trainerid] from [trainer_details];";
@@ -1042,7 +1052,7 @@ namespace TrainerOnline
                 Console.WriteLine(e.Message);
             }
             return newList;
-        } 
+        } */
     }
 }
  

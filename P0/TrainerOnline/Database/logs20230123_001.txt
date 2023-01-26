@@ -664,3 +664,28 @@
 2023-01-23 04:13:48.406 +05:30 [INF] your data has been deleted
 2023-01-23 04:14:02.333 +05:30 [INF] trainer deleted their account permanently
 2023-01-23 04:14:02.333 +05:30 [INF] Trainer exited the application
+2023-01-23 09:19:16.531 +05:30 [INF] new trainer enterted the app
+2023-01-23 09:19:17.505 +05:30 [INF] Displaying main page to the Trainer
+2023-01-23 09:19:18.919 +05:30 [INF] Displying login page to the Trainer
+2023-01-23 09:19:20.860 +05:30 [INF] Displying login page to the Trainer
+2023-01-23 09:19:21.938 +05:30 [INF] Displying login page to the Trainer
+2023-01-23 09:19:29.811 +05:30 [INF] Displaying sign page to the Trainer
+2023-01-23 09:19:35.795 +05:30 [ERR] new trainer with id: 0 entered inncorrect sign up details
+2023-01-23 09:19:35.795 +05:30 [INF] Displaying sign page to the Trainer
+2023-01-23 09:19:41.621 +05:30 [INF] Displaying sign page to the Trainer
+2023-01-23 09:19:44.203 +05:30 [INF] Displaying sign page to the Trainer
+2023-01-23 09:19:45.660 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-23 09:19:52.025 +05:30 [INF] trainer with id: 0 was verified
+2023-01-23 09:19:52.025 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-23 09:19:52.735 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-23 09:19:56.387 +05:30 [INF] Displaying add education details page to the Trainer
+2023-01-23 09:20:00.139 +05:30 [INF] Displaying add education details page to the Trainer
+2023-01-23 09:20:04.281 +05:30 [INF] Displaying add education details page to the Trainer
+2023-01-23 09:20:09.425 +05:30 [INF] Displaying add education details page to the Trainer
+2023-01-23 09:20:30.244 +05:30 [INF] Displaying add education details page to the Trainer
+2023-01-23 09:20:37.809 +05:30 [INF] Displaying add education details page to the Trainer
+2023-01-23 09:20:40.196 +05:30 [INF] trainer with id: 1111 add a new education detail
+2023-01-23 09:20:40.196 +05:30 [INF] Displaying add education details page to the Trainer
+2023-01-23 09:20:41.801 +05:30 [INF] Displaying user id page to the Trainer
+2023-01-23 09:20:46.323 +05:30 [INF] Displaying update education details page to the Trainer
+2023-01-23 09:23:25.051 +05:30 [INF] Displaying update education details page to the Trainer

@@ -89,7 +89,7 @@ namespace TrainerOnline
                         Console.WriteLine("invalid format, please press enter to try again");
                         Console.ReadKey();
                     }
-                    newStartDate = Console.ReadLine();
+                    //newStartDate = Console.ReadLine();
                     return "UpdateCompanyPage";
                 case "4":
                     Console.WriteLine("enter old end year");
