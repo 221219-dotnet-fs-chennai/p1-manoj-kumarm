@@ -1,12 +1,10 @@
-﻿using DataFluentApi;
-using LogicLayer;
+﻿using LogicLayer;
 
 namespace UILayer
 {
     internal class GetAllTrainersPage : ILayout
     {
         ILogic _repo = new Logic();
-        EFRepo repo = new EFRepo();
         public void Display()
         {
             Console.WriteLine(@$"

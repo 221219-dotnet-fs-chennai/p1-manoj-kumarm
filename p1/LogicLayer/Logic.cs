@@ -1,35 +1,70 @@
-﻿using Models;
-using ef = DataFluentApi;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace LogicLayer
 {
     public class Logic : ILogic
     {
-        IRepo<ef.Entities.TrainerDetail> _repo;
-        Models.TrainerDetail _data = new();
+        private static DataFluentApi.Entities.TrainersDbContext context = new DataFluentApi.Entities.TrainersDbContext();
+        Models.IRepo<DataFluentApi.Entities.TrainerDetail> _repo;
+        
         public Logic()
         {
-            _repo = new ef.EFRepo();
+            _repo = new DataFluentApi.EFRepo();
         }
 
-        public int GetTrainerIdByEmail(string str)
+        public void DeleteTrainerDetails(Models.TrainerDetail _data)
         {
-            return Mapper.MapGetTrainerIdByEmail(_repo.GetId(str));
+            try
+            {
+                var trainer = context.TrainerDetails.Where(item => item.Trainerid == _data.Trainerid).First();
+                if (trainer != null)
+                {
+                    context.Remove(trainer);
+                    context.SaveChanges();
+                }
+            }
+            catch (DbUpdateException e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
-        public bool CheckTrainerExists(ef.Entities.TrainerDetail t)
+        public void UpdateTrainerDetails(Models.TrainerDetail _data)
         {
-            return Mapper.MapExistingTrainer(_repo.IsTrainerExists(t));
+            try
+            {
+                var trainer = context.TrainerDetails.Where(item => item.Trainerid == _data.Trainerid).First();
+                if (trainer != null)
+                {
+                    trainer.Fullname = _data.Fullname;
+                    trainer.Phone = _data.Phone;
+                    trainer.Website = _data.Website;
+                    trainer.Aboutme = _data.Aboutme;
+                    trainer.Age = _data.Age;
+                    trainer.Gender = _data.Gender;
+                    context.Update(trainer);
+                    context.SaveChanges();
+                }
+            }
+            catch (DbUpdateException e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
-        public void AddTrainerSignUp(ef.Entities.TrainerDetail t)
+        public void AddTrainerSignUp(Models.TrainerDetail _data)
         {
-            Mapper.MapAddTrainerSignUp(_repo.Add(t));
-        }
-        public bool CheckIdExists(int i) {
-            return Mapper.MapTrainerId(_repo.IsIdExists(i));
-        }
-        public bool CheckEmailExists(string str)
-        {
-            return Mapper.MapTrainerEmail(_repo.IsEmailExists(str));
+            try
+            {
+                context.Add(Mapper.Map(_data));
+                context.SaveChanges();
+            }
+            catch (DbUpdateException e)
+            {
+                Console.WriteLine("");
+            }
+            catch (InvalidOperationException e)
+            {
+                Console.WriteLine("");
+            }
         }
         public IEnumerable<Models.TrainerDetail> GetTrainerByAge(int i, int j) {
             return Mapper.Map(_repo.SearchByFilters(), i, j);
@@ -38,7 +73,5 @@ namespace LogicLayer
         {
             return Mapper.Map(_repo.GetAll());
         }
-
-        
     }
 }

@@ -5,7 +5,7 @@ namespace UILayer
     public class TrainerLoginPage : ILayout
     {
         private static ILogic logic = new Logic();
-        private static DataFluentApi.Entities.TrainerDetail trainer = new();
+        private static Models.TrainerDetail trainer = new();
         private static string e = "";
         public void Display()
         {
@@ -38,7 +38,7 @@ namespace UILayer
                     Console.WriteLine("enter email");
                     e = Console.ReadLine();
                     trainer.Email = e;
-                    if(!logic.CheckEmailExists(e))
+                    if(!Utility.CheckEmailExists(e))
                     {
                         Console.WriteLine($"There's no account connected with, {e} email,\npress enter to sign up");
                         Console.ReadKey();
@@ -50,7 +50,7 @@ namespace UILayer
                     trainer.Password = Console.ReadLine();
                     return "TrainerLoginPage";
                 case "3":
-                    if (!logic.CheckTrainerExists(trainer))
+                    if (!Utility.CheckTrainerExists(trainer))
                     {
                         Console.WriteLine("Email and Password does not match, press enter to try again");
                         Console.ReadKey();

@@ -1,11 +1,11 @@
-﻿using Models;
+﻿using LogicLayer;
 
 namespace UILayer
 {
     internal class UpdateTrainerDetailsPage : ILayout
     {
-        private static DataFluentApi.Entities.TrainerDetail trainer = new();
-        private static IRepo<DataFluentApi.Entities.TrainerDetail> _repo = new DataFluentApi.EFRepo();
+        private static ILogic logic = new Logic();
+        private static Models.TrainerDetail trainer = new();
         public void Display()
         {
             Console.WriteLine(@$"
@@ -15,7 +15,8 @@ namespace UILayer
     Press [3] to enter website   -  {trainer.Website}
     Press [4] to enter aboutme   -  {trainer.Aboutme}
     Press [5] to enter age       -  {trainer.Age}
-    Press [6] to enter save changes
+    Press [6] to enter gender    -  {trainer.Gender}
+    Press [7] to enter save changes
     Press [b] to go back
 ");
         }
@@ -29,7 +30,7 @@ namespace UILayer
                 case "0":
                     return "Exit";
                 case "b":
-                    return "MenuPage";
+                    return "EditAllPage";
                 case "1":
                     Console.WriteLine("enter your full name[required]");
                     trainer.Fullname = Console.ReadLine();
@@ -37,7 +38,7 @@ namespace UILayer
                 case "2":
                     Console.WriteLine("enter your phone[10 digit]");
                     trainer.Phone = Console.ReadLine();
-                    return "AddTrainerSignUpPage";
+                    return "UpdateTrainerDetailsPage";
                 case "3":
                     Console.WriteLine("enter your website url");
                     trainer.Website = Console.ReadLine();
@@ -47,12 +48,17 @@ namespace UILayer
                     trainer.Aboutme = Console.ReadLine();
                     return "UpdateTrainerDetailsPage";
                 case "5":
-                    Console.WriteLine("enter your about me");
+                    Console.WriteLine("enter your age");
                     trainer.Age = Console.ReadLine();
                     return "UpdateTrainerDetailsPage";
                 case "6":
-                    Console.WriteLine("ladn");
-                    _repo.Update(trainer);
+                    Console.WriteLine("enter your gender");
+                    trainer.Gender = Console.ReadLine();
+                    return "UpdateTrainerDetailsPage";
+                case "7":
+                    trainer.Trainerid = EditAllPage.newtrainer.Trainerid;
+                    logic.UpdateTrainerDetails(trainer);
+                    Console.WriteLine("updating...");
                     Console.ReadKey();
                     return "UpdateTrainerDetailsPage";
                 default:

@@ -1,142 +1,181 @@
-﻿using DataFluentApi;
-using DataFluentApi.Entities;
-using Microsoft.EntityFrameworkCore;
-
-namespace LogicLayer
+﻿namespace LogicLayer
 {
     /// <summary>
-    /// We are using Mapper class to convert Models to Entity Models
+    /// Used to convert Models to Entities and vice versa
     /// </summary>
     public class Mapper
     {
-        private static TrainersDbContext context = new TrainersDbContext();
-        
+        private static DataFluentApi.Entities.TrainersDbContext context = new DataFluentApi.Entities.TrainersDbContext();
+
         /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="email"></param>
-        /// <returns></returns>
-        public static int MapGetTrainerIdByEmail(string email)
-        {
-            try
-            {
-                int id = 0;
-                var t = context.TrainerDetails.Where(item => item.Email == email).First();
-                if (t.Email == email)
-                {
-                    id = t.Trainerid;
-                }
-                return id;
-            }
-            catch (InvalidOperationException e)
-            {
-                Console.WriteLine("");
-            }
-            return 0;
-        }
-        /// <summary>
-        /// 
+        /// This method converts from Models TrainerCompany object to EF TrainerCompany Entity
         /// </summary>
         /// <param name="t"></param>
-        /// <returns></returns>
-        public static bool MapExistingTrainer(DataFluentApi.Entities.TrainerDetail t)
+        /// <returns>EF TrainerCompany entity</returns>
+        public static DataFluentApi.Entities.TrainerCompany Map(Models.TrainerCompany t)
         {
-            try
+            return new DataFluentApi.Entities.TrainerCompany()
             {
-                var trainer = context.TrainerDetails.Where(item => item.Email == t.Email).First();
-                if(trainer.Email == t.Email && trainer.Password == t.Password)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            catch (InvalidOperationException e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            return false;
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="t"></param>
-        public static void MapAddTrainerSignUp(DataFluentApi.Entities.TrainerDetail t)
-        {
-            try
-            {
-                context.Add(t);
-                context.SaveChanges();
-            }
-            catch (DbUpdateException e)
-            {
-                Console.WriteLine(e.Message);
-            }
+                Id = t.Id,
+                Companyname = t.Companyname,
+                Title = t.Title,
+                Startyear = t.Startyear,
+                Endyear = t.Endyear,
+                Trainercompanyid = t.Trainercompanyid
+            };
         }
 
         /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="i"></param>
-        /// <returns></returns>
-        public static bool MapTrainerId(int i)
-        {
-            try
-            {
-                var t = context.TrainerDetails.Where(item => item.Trainerid == i).First();
-                if (t.Trainerid == i)
-                {
-                    return true;
-                }
-                else if (t.Trainerid != i)
-                {
-                    return false;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            catch (InvalidOperationException e)
-            {
-                Console.WriteLine("");
-            }
-            return false;
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="email"></param>
-        /// <returns></returns>
-        public static bool MapTrainerEmail(string email) {
-            try {
-                var t = context.TrainerDetails.Where(item => item.Email == email).First();
-                if (t.Email == email)
-                {
-                    return true;
-                }
-                else if (t.Email != email || t.Email == null)
-                {
-                    return false;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            catch (InvalidOperationException e) {
-                Console.WriteLine(e.Message);
-            }
-            return false;
-        }
-        
-        /// <summary>
-        /// This method converts Models TrainerDetails object to EF TrainerDetails Entity
+        /// This method converts from Models TrainerEducation object to EF TrainerEducation Entity
         /// </summary>
         /// <param name="t"></param>
-        /// <returns></returns>
+        /// <returns>EF TrainerEducation entity</returns>
+        public static DataFluentApi.Entities.TrainerEducation Map(Models.TrainerEducation t)
+        {
+            return new DataFluentApi.Entities.TrainerEducation()
+            {
+                Id = t.Id,
+                Institute = t.Institute,
+                Degreename = t.Degreename,
+                Gpa = t.Gpa,
+                Startdate = t.Startdate,
+                Enddate = t.Enddate,
+                Trainereducationid = t.Trainereducationid,
+            };
+        }
+
+        /// <summary>
+        /// This method converts from Models TrainerLocation object to EF TrainerLocation Entity
+        /// </summary>
+        /// <param name="t"></param>
+        /// <returns>EF TrainerLocation entity</returns>
+        public static DataFluentApi.Entities.TrainerLocation Map(Models.TrainerLocation t)
+        {
+            return new DataFluentApi.Entities.TrainerLocation()
+            {
+                Id = t.Id,
+                City = t.City,
+                Zipcode = t.Zipcode,
+                Trainerlocationid = t.Trainerlocationid
+            };
+        }
+
+        /// <summary>
+        /// This method converts from Models TrainerSkill object to EF TrainerSkill Entity
+        /// </summary>
+        /// <param name="t"></param>
+        /// <returns>EF TrainerSkill Entity</returns>
+        public static DataFluentApi.Entities.TrainerSkill Map(Models.TrainerSkills t)
+        {
+            return new DataFluentApi.Entities.TrainerSkill()
+            {
+                Id = t.Id,
+                Skill = t.Skill,
+                Trainerskillid = t.Trainerskillid
+            };
+        }
+
+        /// <summary>
+        /// This method converts from Models TrainerDetails object to EF TrainerDetails Entity
+        /// </summary>
+        /// <param name="t"></param>
+        /// <returns>EF TrainerDetails Entity</returns>
+        public static DataFluentApi.Entities.TrainerDetail Map(Models.TrainerDetail t)
+        {
+            return new DataFluentApi.Entities.TrainerDetail()
+            {
+                Fullname = t.Fullname,
+                Phone = t.Phone,
+                Website = t.Website,
+                Aboutme = t.Aboutme,
+                Gender  = t.Gender,
+                Age = t.Age,
+                Email= t.Email,
+                Password = t.Password,
+                Trainerid = t.Trainerid
+            };
+        }
+
+
+        //TO ITERATE
+
+        /// <summary>
+        /// This method converts to Models TrainerCompany object from EF TrainerCompany Entity
+        /// </summary>
+        /// <param name="t"></param>
+        /// <returns>Models TrainerCompany object</returns>
+        public static Models.TrainerCompany Map(DataFluentApi.Entities.TrainerCompany t)
+        {
+            return new Models.TrainerCompany()
+            {
+                Id = t.Id,
+                Companyname = t.Companyname,
+                Title = t.Title,
+                Startyear = t.Startyear,
+                Endyear = t.Endyear,
+                Trainercompanyid = t.Trainercompanyid,
+            };
+        }
+        //TO_DO Get company specific to the trainer in logic layer
+
+        /// <summary>
+        /// This method converts to Models TrainerEducation object from EF TrainerEducation Entity
+        /// </summary>
+        /// <param name="t"></param>
+        /// <returns>Models TrainerEducation object</returns>
+        public static Models.TrainerEducation Map(DataFluentApi.Entities.TrainerEducation t)
+        {
+            return new Models.TrainerEducation()
+            {
+                Id = t.Id,
+                Institute = t.Institute,
+                Startdate = t.Startdate,
+                Enddate = t.Enddate,
+                Trainereducationid = t.Trainereducationid,
+                Gpa = t.Gpa,
+                Degreename = t.Degreename,
+            };
+        }
+        //TO_DO Get education specific to the trainer in logic layer
+
+        /// <summary>
+        /// This method converts to Models TrainerLocation object from EF TrainerLocation Entity
+        /// </summary>
+        /// <param name="t"></param>
+        /// <returns>Models TrainerLocation object</returns>
+        public static Models.TrainerLocation Map(DataFluentApi.Entities.TrainerLocation t)
+        {
+            return new Models.TrainerLocation()
+            {
+                Id = t.Id,
+                City = t.City,
+                Zipcode= t.Zipcode,
+                Trainerlocationid = t.Trainerlocationid
+            };
+        }
+        //TO_DO Get location specific to the trainer in logic layer
+
+        /// <summary>
+        /// This method converts to Models TrainerSkill object from EF TrainerSkill Entity
+        /// </summary>
+        /// <param name="t"></param>
+        /// <returns>Models TrainerSkill object</returns>
+        public static Models.TrainerSkills Map(DataFluentApi.Entities.TrainerSkill t)
+        {
+            return new Models.TrainerSkills()
+            {
+                Id = t.Id,
+                Skill = t.Skill,
+                Trainerskillid = t.Trainerskillid
+            };
+        }
+        //TO_DO Get skill specific to the trainer in logic layer
+
+        /// <summary>
+        /// This method converts to Models TrainerDetails object from EF TrainerDetails Entity
+        /// </summary>
+        /// <param name="t"></param>
+        /// <returns>Models TrainerDetails object</returns>
         public static Models.TrainerDetail Map(DataFluentApi.Entities.TrainerDetail t)
         {
             return new Models.TrainerDetail()
@@ -157,7 +196,7 @@ namespace LogicLayer
         /// This method converts Models collection of TrainerDetail object to EF collection of TrainerDetail Entity
         /// </summary>
         /// <param name="trainers"></param>
-        /// <returns></returns>
+        /// <returns>Iterable Collection</returns>
         public static IEnumerable<Models.TrainerDetail> Map(IEnumerable<DataFluentApi.Entities.TrainerDetail> trainers) {
             try
             {
@@ -171,12 +210,12 @@ namespace LogicLayer
         }
 
         /// <summary>
-        /// 
+        /// This method converts Models collection of TrainerDetail object to EF collection of TrainerDetail Entity
         /// </summary>
         /// <param name="trainer"></param>
         /// <param name="i"></param>
         /// <param name="j"></param>
-        /// <returns></returns>
+        /// <returns>Iterable collection</returns>
         public static IEnumerable<Models.TrainerDetail>Map(IEnumerable<DataFluentApi.Entities.TrainerDetail> trainer, int i, int j)
         {
             var query = from t in trainer

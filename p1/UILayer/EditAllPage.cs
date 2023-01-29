@@ -1,20 +1,17 @@
-﻿using DataFluentApi;
-using LogicLayer;
-
+﻿using LogicLayer;
 
 namespace UILayer
 {
     internal class EditAllPage : ILayout
     {
         ILogic logic = new Logic();
-        private static DataFluentApi.Entities.TrainerDetail trainer = new();
+        internal static Models.TrainerDetail newtrainer = new();
         public void Display()
         {
             Console.WriteLine("-------------------------Verification/Add/Update/Delete Details-------------------------");
             Console.WriteLine($@"
     -----------Verify your accout-----------
-    Press [1] - to enter your email - {trainer.Email}
-    your id is, {trainer.Trainerid}
+    Press [1] - to enter your email - {newtrainer.Email}
     Press [2] - to verify
     Press [v] - to view your complete profile
 
@@ -54,18 +51,58 @@ namespace UILayer
             {
                 case "1":
                     Console.WriteLine("Enter your email for verification [required]");
-                    trainer.Email = Console.ReadLine();
-                    if (!logic.CheckEmailExists(trainer.Email))
+                    newtrainer.Email = Console.ReadLine();
+                    if (!Utility.CheckEmailExists(newtrainer.Email))
                     {
-                        Console.WriteLine("incorrect email, please press enter to try again else try signing up");
-                        Console.ReadKey();
-                        return "EditAllPage";
+                        Console.WriteLine("incorrect email, please press <t> to try again else try signing up by pressing <s>");
+                        string ip = Console.ReadLine();
+                        switch (ip)
+                        {
+                            case "t":
+                                return "EditAllPage";
+                            case "s":
+                                return "AddTrainerSignUpPage";
+                            default:
+                                Console.WriteLine("invalid reponse, press enter to continue");
+                                Console.ReadKey();
+                                return "EditAllPage";
+                        }
                     }
-                    Console.WriteLine("email exists");
-                    Console.ReadKey();
                     return "EditAllPage";
                 case "2":
-                    trainer.Trainerid = logic.GetTrainerIdByEmail(trainer.Email);
+                    newtrainer.Trainerid = Utility.GetTrainerIdByEmail(newtrainer.Email);
+                    return "EditAllPage";
+                case "3":
+                    return "UpdateTrainerDetailsPage";
+                case "15":
+                    Console.WriteLine("Enter your email");
+                    newtrainer.Email = Console.ReadLine();
+                    if (!Utility.CheckEmailExists(newtrainer.Email))
+                    {
+                        Console.WriteLine("incorrect email, please press <t> to try again else try signing up by pressing <s>");
+                        string ip = Console.ReadLine();
+                        switch (ip)
+                        {
+                            case "t":
+                                return "EditAllPage";
+                            case "s":
+                                return "AddTrainerSignUpPage";
+                            default:
+                                Console.WriteLine("invalid reponse, press enter to continue");
+                                Console.ReadKey();
+                                return "EditAllPage";
+                        }
+                    }
+                    IncorrectPassword:
+                    Console.WriteLine("Enter your password");
+                    newtrainer.Password = Console.ReadLine();
+                    if (!Utility.CheckTrainerExists(newtrainer))
+                    {
+                        Console.WriteLine("Email and Password does not match, press enter to try again");
+                        goto IncorrectPassword;
+                    }
+                    newtrainer.Trainerid = Utility.GetTrainerIdByEmail(newtrainer.Email);
+                    logic.DeleteTrainerDetails(newtrainer);
                     return "EditAllPage";
                 default:
                     Console.WriteLine("invalid reponse, press enter to continue");

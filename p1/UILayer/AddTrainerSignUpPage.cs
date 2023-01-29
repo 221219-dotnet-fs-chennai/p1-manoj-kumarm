@@ -1,16 +1,14 @@
 ﻿using LogicLayer;
-using Models;
 
 namespace UILayer
 {
 
     internal class AddTrainerSignUpPage : ILayout
     {
-        private static DataFluentApi.Entities.TrainerDetail trainer = new();
+        private static Models.TrainerDetail trainer = new();
         private static ILogic logic= new Logic();
-        //private static IRepo<DataFluentApi.Entities.TrainerDetail> _repo = new DataFluentApi.EFRepo();
         private static string e = "";
-        private static int id = 0000;
+        private static int id = 0;
         public void Display()
         {
             Console.WriteLine(@$"Sign Up!
@@ -35,11 +33,9 @@ namespace UILayer
                 case "1":
                     Console.WriteLine("enter email");
                     e = Console.ReadLine();
-                    if (!logic.CheckEmailExists(e))
+                    if (!Utility.CheckEmailExists(e))
                     {
-                        //doesnt exist
                         trainer.Email = e;
-                        Console.ReadKey();
                         return "AddTrainerSignUpPage";
                     }
                     else
@@ -55,11 +51,9 @@ namespace UILayer
                     return "AddTrainerSignUpPage";
                 case "3":
                     id = Utility.GenerateRandomNo();
-                    if (!logic.CheckIdExists(id))
+                    if (!Utility.CheckIdExists(id))
                     {
                         trainer.Trainerid = id;
-                        Console.WriteLine("this is unique");
-                        Console.ReadKey();
                         return "AddTrainerSignUpPage";
                     }
                     else
@@ -70,8 +64,9 @@ namespace UILayer
                     return "AddTrainerSignUpPage";
                 case "4":
                     logic.AddTrainerSignUp(trainer);
+                    Console.WriteLine("Sign up complete!\nPress enter to login!");
                     Console.ReadKey();
-                    return "AddTrainerSignUpPage";
+                    return "TrainerLoginPage";
                 default:
                     Console.WriteLine("invalid reponse, press enter to continue");
                     Console.ReadKey();

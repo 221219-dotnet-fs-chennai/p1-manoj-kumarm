@@ -19,9 +19,7 @@ namespace Models
         public override string ToString()
         {
             return @$"
-    ID:               {Id}
     Skill Name:       {Skill}
-    TrainerId:        {Trainerskillid}
 ";
         }
     }
