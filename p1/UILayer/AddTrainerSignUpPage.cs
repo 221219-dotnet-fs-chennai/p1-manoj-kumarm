@@ -2,7 +2,6 @@
 
 namespace UILayer
 {
-
     internal class AddTrainerSignUpPage : ILayout
     {
         private static Models.TrainerDetail trainer = new();

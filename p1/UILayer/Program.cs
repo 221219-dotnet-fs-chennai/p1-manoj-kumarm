@@ -27,6 +27,9 @@ while (repeat)
         case "UpdateTrainerDetailsPage":
             layout = new UpdateTrainerDetailsPage();
             break;
+        case "AddTrainerSkillsPage":
+            layout = new AddTrainerSkillsPage();
+            break;
         case "EditAllPage":
             layout = new EditAllPage();
             break;

@@ -2,6 +2,15 @@
 {
     public interface ILogic
     {
+        /// <summary>
+        /// Inserts new data into the trainerSkills table 
+        /// </summary>
+        /// <param name="_data"></param>
+        void AddTrainerSkills(Models.TrainerSkills _data);
+        /// <summary>
+        /// Removes data from the trainerDetails table
+        /// </summary>
+        /// <param name="_data"></param>
         void DeleteTrainerDetails(Models.TrainerDetail _data);
         /// <summary>
         /// Insertes data into the TrainerDetails table in the Db

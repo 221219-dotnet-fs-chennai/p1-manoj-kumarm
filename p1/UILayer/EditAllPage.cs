@@ -25,8 +25,8 @@ namespace UILayer
 
     -----------Add new details-----------
 
-    press [8] - to add new skill 
-    press [9] - to add your location 
+    press [8]  - to add new skill 
+    press [9]  - to add your location 
     press [10] - to add your education details
     press [11] - to add your experience details
 
@@ -54,19 +54,13 @@ namespace UILayer
                     newtrainer.Email = Console.ReadLine();
                     if (!Utility.CheckEmailExists(newtrainer.Email))
                     {
-                        Console.WriteLine("incorrect email, please press <t> to try again else try signing up by pressing <s>");
-                        string ip = Console.ReadLine();
-                        switch (ip)
-                        {
-                            case "t":
-                                return "EditAllPage";
-                            case "s":
-                                return "AddTrainerSignUpPage";
-                            default:
-                                Console.WriteLine("invalid reponse, press enter to continue");
-                                Console.ReadKey();
-                                return "EditAllPage";
-                        }
+                        string returned = UIUtility.TryAgainForEditAllPage();
+                        return returned;
+                    }
+                    if(newtrainer.Email != TrainerLoginPage.trainer.Email)
+                    {
+                        Console.WriteLine("Your email does not match please try again with the right email id\nPress <enter> to try again");
+                        Console.ReadKey();
                     }
                     return "EditAllPage";
                 case "2":
@@ -74,6 +68,8 @@ namespace UILayer
                     return "EditAllPage";
                 case "3":
                     return "UpdateTrainerDetailsPage";
+                case "8":
+                    return "AddTrainerSkillsPage";
                 case "15":
                     Console.WriteLine("Enter your email");
                     newtrainer.Email = Console.ReadLine();

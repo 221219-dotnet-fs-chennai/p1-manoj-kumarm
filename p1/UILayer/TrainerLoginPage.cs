@@ -5,7 +5,7 @@ namespace UILayer
     public class TrainerLoginPage : ILayout
     {
         private static ILogic logic = new Logic();
-        private static Models.TrainerDetail trainer = new();
+        internal static Models.TrainerDetail trainer = new();
         private static string e = "";
         public void Display()
         {
@@ -40,9 +40,8 @@ namespace UILayer
                     trainer.Email = e;
                     if(!Utility.CheckEmailExists(e))
                     {
-                        Console.WriteLine($"There's no account connected with, {e} email,\npress enter to sign up");
-                        Console.ReadKey();
-                        return "AddTrainerSignUpPage";
+                        string returned = UIUtility.TryAgainForLoginPage();
+                        return returned;
                     }
                     return "TrainerLoginPage";
                 case "2":

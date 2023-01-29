@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Xml.Linq;
 
 namespace LogicLayer
 {
@@ -11,7 +12,23 @@ namespace LogicLayer
         {
             _repo = new DataFluentApi.EFRepo();
         }
-
+        
+        public void AddTrainerSkills(Models.TrainerSkills _data)
+        {
+            try
+            {
+                context.Add(Mapper.Map(_data));
+                context.SaveChanges();
+            }
+            catch(InvalidOperationException e)
+            {
+                Console.WriteLine("");
+            }
+            catch (DbUpdateException e)
+            {
+                Console.WriteLine("");
+            }
+        }
         public void DeleteTrainerDetails(Models.TrainerDetail _data)
         {
             try
@@ -19,6 +36,7 @@ namespace LogicLayer
                 var trainer = context.TrainerDetails.Where(item => item.Trainerid == _data.Trainerid).First();
                 if (trainer != null)
                 {
+                    
                     context.Remove(trainer);
                     context.SaveChanges();
                 }
@@ -28,22 +46,20 @@ namespace LogicLayer
                 Console.WriteLine(e.Message);
             }
         }
+
         public void UpdateTrainerDetails(Models.TrainerDetail _data)
         {
             try
             {
-                var trainer = context.TrainerDetails.Where(item => item.Trainerid == _data.Trainerid).First();
-                if (trainer != null)
-                {
-                    trainer.Fullname = _data.Fullname;
-                    trainer.Phone = _data.Phone;
-                    trainer.Website = _data.Website;
-                    trainer.Aboutme = _data.Aboutme;
-                    trainer.Age = _data.Age;
-                    trainer.Gender = _data.Gender;
-                    context.Update(trainer);
-                    context.SaveChanges();
-                }
+                DataFluentApi.Entities.TrainerDetail t;
+                t = Utility.CheckForNullsAndUpdate(_data);
+                context.Update(t);
+                context.SaveChanges();
+                
+            }
+            catch(InvalidOperationException e)
+            {
+                Console.WriteLine(e.Message);
             }
             catch (DbUpdateException e)
             {
