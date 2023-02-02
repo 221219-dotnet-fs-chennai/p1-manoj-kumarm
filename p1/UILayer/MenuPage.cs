@@ -1,4 +1,6 @@
 ﻿
+using LogicLayer;
+
 namespace UILayer
 {
     internal class MenuPage : ILayout
