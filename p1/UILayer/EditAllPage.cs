@@ -4,7 +4,7 @@ namespace UILayer
 {
     internal class EditAllPage : ILayout
     {
-        ILogic logic = new Logic();
+        ITrainerDetailLogic logic = new TrainerDetailLogic();
         internal static Models.TrainerDetail newtrainer = new();
         public void Display()
         {
@@ -68,8 +68,12 @@ namespace UILayer
                     return "EditAllPage";
                 case "3":
                     return "UpdateTrainerDetailsPage";
+                case "4":
+                    return "UpdateSkillPage";
                 case "8":
                     return "AddTrainerSkillsPage";
+                case "12":
+                    return "DeleteSkillsPage";
                 case "15":
                     Console.WriteLine("Enter your email");
                     newtrainer.Email = Console.ReadLine();

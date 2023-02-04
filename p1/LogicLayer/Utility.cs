@@ -8,6 +8,30 @@ namespace LogicLayer
         internal static readonly int MaxCount = 2;
         private static TrainersDbContext context = new TrainersDbContext();
 
+        public static DataFluentApi.Entities.TrainerSkill CheckForNullsAndUpdate(Models.TrainerSkills _data, string oldSkill)
+        {
+            try
+            {
+                var trainer = context.TrainerSkills.Where(item => item.Trainerskillid == _data.Trainerskillid && item.Skill == oldSkill).First();
+                if (trainer != null)
+                {
+                    if (trainer.Skill != null && _data.Skill == null)
+                    {
+                        trainer.Skill = trainer.Skill;
+                    }
+                    else
+                    {
+                        trainer.Skill = _data.Skill;
+                    }
+                }
+                return trainer;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine();
+            }
+            return null;
+        }
         /// <summary>
         /// Updates only the specified column in the Db
         /// </summary>

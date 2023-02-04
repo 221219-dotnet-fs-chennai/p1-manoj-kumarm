@@ -1,7 +1,8 @@
 ﻿namespace LogicLayer
 {
-    public interface ILogic
+    public interface ITrainerDetailLogic
     {
+        
         /// <summary>
         /// Inserts new data into the trainerSkills table 
         /// </summary>
@@ -23,6 +24,8 @@
         /// </summary>
         /// <param name="_data"></param>
         void UpdateTrainerDetails(Models.TrainerDetail _data);
+
+        IEnumerable<Models.All> GetAllInfo();
 
         /// <summary>
         /// Used to fetch details of all the trainers

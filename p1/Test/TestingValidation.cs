@@ -8,6 +8,7 @@ namespace Test
         [SetUp]
         public void Setup(){}
 
+        [TestCase(null, false)]
         [TestCase("", false)] 
         [TestCase(" ", false)] 
         [TestCase("xyzkml.@gmail.com", false)]
@@ -49,6 +50,7 @@ namespace Test
             Assert.AreEqual(expected, actual);
         }
 
+        [TestCase(null, false)]
         [TestCase("", false)]
         [TestCase(" ", false)]
         [TestCase("xyz", false)]
@@ -68,6 +70,7 @@ namespace Test
             Assert.AreEqual(expected, actual);
         }
 
+        [TestCase(null,false)]
         [TestCase("", false)]
         [TestCase(" ", false)]
         [TestCase("12345", false)]
@@ -92,6 +95,7 @@ namespace Test
             Assert.AreEqual(expected, actual);
         }
 
+        [TestCase(null, false)]
         [TestCase("", false)]
         [TestCase(" ", false)]
         [TestCase("https:/google.com", false)]

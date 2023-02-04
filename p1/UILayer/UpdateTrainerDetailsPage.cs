@@ -4,7 +4,7 @@ namespace UILayer
 {
     internal class UpdateTrainerDetailsPage : ILayout
     {
-        private static ILogic logic = new Logic();
+        private static ITrainerDetailLogic logic = new TrainerDetailLogic();
         private static Models.TrainerDetail trainer = new();
         public void Display()
         {

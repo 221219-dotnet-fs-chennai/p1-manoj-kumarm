@@ -4,7 +4,7 @@ namespace UILayer
 {
     public class TrainerLoginPage : ILayout
     {
-        private static ILogic logic = new Logic();
+        private static ITrainerDetailLogic logic = new TrainerDetailLogic();
         internal static Models.TrainerDetail trainer = new();
         private static string e = "";
         public void Display()

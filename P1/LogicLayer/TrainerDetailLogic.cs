@@ -1,15 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Models;
 
 namespace LogicLayer
 {
-    public class Logic : ILogic
+    public class TrainerDetailLogic : ITrainerDetailLogic
     {
         private static DataFluentApi.Entities.TrainersDbContext context = new DataFluentApi.Entities.TrainersDbContext();
         Models.IRepo<DataFluentApi.Entities.TrainerDetail> _repo;
         
-        public Logic()
+        public TrainerDetailLogic()
         {
-            _repo = new DataFluentApi.EFRepo();
+            _repo = new DataFluentApi.TrainerDetailEFRepo();
         }
         
         public void AddTrainerSkills(Models.TrainerSkills _data)
@@ -87,6 +88,11 @@ namespace LogicLayer
         public IEnumerable<Models.TrainerDetail> GetTrainerDetails()
         {
             return Mapper.Map(_repo.GetAll());
+        }
+
+        public IEnumerable<Models.All> GetAllInfo()
+        {
+           return Mapper.Map();
         }
     }
 }

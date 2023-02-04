@@ -6,7 +6,7 @@
         /// Used to fetch all the details
         /// </summary>
         /// <returns>Generic collection list of objects</returns>
-        List<T> GetAll();
+        List<T> GetAll(int _ = 0);
 
         /// <summary>
         /// Used to fetch details using the specified filter

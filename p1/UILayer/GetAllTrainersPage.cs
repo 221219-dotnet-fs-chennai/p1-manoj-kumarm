@@ -4,7 +4,8 @@ namespace UILayer
 {
     internal class GetAllTrainersPage : ILayout
     {
-        ILogic _repo = new Logic();
+        static ITrainerSkill _logic = new TrainerSkillLogic();
+        static ITrainerDetailLogic _repo = new TrainerDetailLogic();
         public void Display()
         {
             Console.WriteLine(@$"
@@ -26,13 +27,38 @@ namespace UILayer
                 case "b":
                     return "MenuPage";
                 case "1":
-                    var listOfTrainers = _repo.GetTrainerDetails();
-                    foreach (var t in listOfTrainers)
+                    var all = _repo.GetAllInfo();
+                    foreach (var item in all)
                     {
-                        Console.WriteLine("************************");
-                        Console.WriteLine(t.ToString());
+                        Console.WriteLine(item.ToString());
                     }
-                    Console.WriteLine("Press enter to continue...");
+                    /*foreach (var item in list)
+                    {
+                        foreach (var detail in item.details)
+                        {
+                            Console.WriteLine(detail);
+                        }
+                        *//*foreach (var skill in item.skills)
+                        {
+                            Console.WriteLine(skill);
+                        }*//*
+                    }*/
+                    /*var listOfTrainers = _repo.GetTrainerDetails();
+                    foreach (var item in listOfTrainers)
+                    {
+                        Console.WriteLine("\t\t\tDetails");
+                        Console.WriteLine(item.ToString());
+                        var skills = _logic.GetTrainerSkills(item.Trainerid);
+                        Console.WriteLine("\t\t\tskills");
+                        Console.WriteLine();
+                        foreach (var skill in skills)
+                        {
+                            Console.WriteLine($"\t{skill.ToString()}");
+                        }
+                        Console.WriteLine("---------------------------------------------------------------------------------");
+                    }
+                    _repo.GetTrainerDetails();
+                    Console.WriteLine("Press enter to continue...");*/
                     Console.ReadKey();
                     return "GetAllTrainerPage";
                 case "2":
@@ -44,8 +70,16 @@ namespace UILayer
                     var trainer = _repo.GetTrainerByAge(starting, ending);
                     foreach (var item in trainer)
                     {
-                        Console.WriteLine("*************************");
+                        Console.WriteLine("\t\t\tDetails");
                         Console.WriteLine(item.ToString());
+                        var skills = _logic.GetTrainerSkills(item.Trainerid);
+                        Console.WriteLine("\t\t\tskills");
+                        Console.WriteLine();
+                        foreach (var skill in skills)
+                        {
+                            Console.WriteLine($"\t{skill.ToString()}");
+                        }
+                        Console.WriteLine("---------------------------------------------------------------------------------");
                     }
                     Console.WriteLine("Press enter to continue...");
                     Console.ReadKey();

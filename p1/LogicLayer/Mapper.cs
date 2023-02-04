@@ -1,4 +1,8 @@
-﻿namespace LogicLayer
+﻿using Models;
+using System.Collections.Generic;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+
+namespace LogicLayer
 {
     /// <summary>
     /// Used to convert Models to Entities and vice versa
@@ -6,6 +10,27 @@
     public class Mapper
     {
         private static DataFluentApi.Entities.TrainersDbContext context = new DataFluentApi.Entities.TrainersDbContext();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="trainers"></param>
+        /// <returns></returns>
+        public static IEnumerable<Models.TrainerSkills> Map(IEnumerable<DataFluentApi.Entities.TrainerSkill> skills, int id)
+        {
+            try
+            {
+                var query = from t in skills
+                            where t.Trainerskillid == id
+                            select t;
+                return query.Select(Map);
+            }
+            catch (ArgumentNullException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return null;
+        }
 
         /// <summary>
         /// This method converts from Models TrainerCompany object to EF TrainerCompany Entity
@@ -207,6 +232,32 @@
                 Console.WriteLine(e.Message);
             }
             return trainers.Select(Map);
+        }
+
+        public static IEnumerable<Models.All> Map()
+        {
+            var tr = context.TrainerDetails;
+            var sk = context.TrainerSkills;
+            var res = (from t in tr
+                       select new Models.All
+                       {
+                           Name = t.Fullname,
+                           Age = t.Age,
+                           Gender = t.Gender,
+                           /*Skill = (from r in sk
+                                    where r.Trainerskillid == t.Trainerid
+                                    select r.Skill).First(),
+                           SKillTwo = (from r in sk
+                                       where r.Trainerskillid == t.Trainerid
+                                       orderby r.Skill
+                                       select r.Skill).Last(),*/
+                           AllSkills = (from r in sk
+                                         where r.Trainerskillid == t.Trainerid
+                                         orderby r.Skill
+                                         select r.Skill).Take(3).ToList()
+
+                       }); ;
+            return res.ToList();
         }
 
         /// <summary>

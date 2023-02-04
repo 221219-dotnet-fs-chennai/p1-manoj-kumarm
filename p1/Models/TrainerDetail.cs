@@ -25,12 +25,12 @@
         public override string ToString()
         {
             return @$"
-    Email:      {Email}
-    Name:       {Fullname}
-    Phone:      {Phone}
-    Gender:     {Gender}
-    Age:        {Age}
-    Website:    {Website}
+        Email:      {Email}
+        Name:       {Fullname}
+        Phone:      {Phone}
+        Gender:     {Gender}
+        Age:        {Age}
+        Website:    {Website}
 ";
         }
     }

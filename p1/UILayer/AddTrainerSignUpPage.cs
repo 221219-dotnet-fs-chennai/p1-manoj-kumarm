@@ -5,7 +5,7 @@ namespace UILayer
     internal class AddTrainerSignUpPage : ILayout
     {
         private static Models.TrainerDetail trainer = new();
-        private static ILogic logic= new Logic();
+        private static ITrainerDetailLogic logic= new TrainerDetailLogic();
         private static string e = "";
         private static int id = 0;
         public void Display()

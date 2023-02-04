@@ -5,7 +5,7 @@ namespace UILayer
     internal class AddTrainerSkillsPage : ILayout
     {
         private static readonly Models.TrainerSkills skills = new();
-        private static readonly ILogic logic = new Logic();
+        private static readonly ITrainerSkill logic = new TrainerSkillLogic();
        public void Display()
        {
                 Console.WriteLine($@"-------------------------Add skills-------------------------
@@ -25,42 +25,18 @@ namespace UILayer
                     Console.WriteLine("Enter skill name");
                     string newSkillName = Console.ReadLine();
                     skills.Skill = newSkillName;
-                    /*if (Validation.IsValidSkillName(newSkillName))
-                    {
-                        newSkill.skillName = newSkillName;
-                    }
-                    else
-                    {
-                        newSkill.skillName = "";
-                        Console.WriteLine("Invalid format, skill should be more than 3 characters long, press enter to try again");
-                        Console.ReadKey();
-                    }*/
                     return "AddTrainerSkillsPage";
                 case "2":
                     skills.Trainerskillid = EditAllPage.newtrainer.Trainerid;
                     if (!Utility.ReachedMaxCount(skills.Trainerskillid))
                     {
-                        logic.AddTrainerSkills(skills);
+                        logic.AddTrainerSkill(skills);
                     }
                     else
                     {
                         Console.WriteLine("You can add atmost 3 skills, try updating"); //make a costom exception
                         Console.ReadKey();
                     }
-                    /*try
-                    {
-                        newSkill.trainerskillid = UserIdPage.newUserProfile.userid;
-                        newSql.AddSkills(newSkill);
-                        Console.WriteLine("saving...");
-                        Log.Information($"trainer with id: {UserIdPage.newUserProfile.userid} added new skill detail");
-
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                        Log.Error($"trainer with id: {UserIdPage.newUserProfile.userid} could not add skill detail");
-
-                    }*/
                     return "AddTrainerSkillsPage";
                 case "b":
                     return "EditAllPage";
