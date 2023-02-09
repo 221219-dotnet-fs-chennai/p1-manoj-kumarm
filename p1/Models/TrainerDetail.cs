@@ -1,5 +1,6 @@
 ﻿namespace Models
 {
+    [Serializable]
     public class TrainerDetail
     {
         public TrainerDetail() { }

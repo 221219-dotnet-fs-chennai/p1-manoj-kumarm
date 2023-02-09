@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment10</title>
+  <style>
+    .container{
+      width: fit-content;
+      margin: auto;
+    }
+    .input__content{
+      border: none;
+      border-radius: none;
+      background-color: rgb(235, 235, 235);
+      height: 2rem;
+      width: 20rem;
+      padding: 10px;
+      display: block;
+      margin-bottom: 1rem
+    }
+    .input__content:where(:focus,:active){
+      border: none;
+      border-radius: none;
+      outline: none;
+    }
+    .btn{
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: none;
+      display: inline;
+      cursor: pointer;
+    }
+    div>form>:nth-child(3){
+      margin-right: 1rem;
+      color: white;
+      background-color: black;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="container">
+      <h1>Request a ride now</h1>
+      <form action="">
+        <input class="input__content" type="text" placeholder="Enter pickup location">
+        <input class="input__content" type="text" placeholder="Enter destination">
+        <button class="btn">Request now</button>
+        <button class="btn">Schedule for later</button>
+      </form>
+    </div>
+  </main>
+</body>
+</html>

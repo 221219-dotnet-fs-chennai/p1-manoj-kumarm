@@ -7,32 +7,50 @@ namespace UILayer
 {
     internal class MenuPage : ILayout
     {
-        
-        /*public void ApiCalls()
+
+        public async void ApiCalls()
         {
             using var client = new HttpClient();
+            /*using var client = new HttpClient();
             //client.BaseAddress = new Uri("https://localhost:7009/V1/api/Trainers/AddTrainerSignUp");
-            *//*Models.TrainerDetail t = new() { 
-                Trainerid= 5627,
+            Models.TrainerDetail t = new()
+            {
+                Trainerid = 5627,
                 Email = "apicall@gmail.com",
                 Password = "api@123"
             };
             string path = "postTrainer.json";
             string json = JsonSerializer.Serialize(t);
             File.WriteAllText(path, json);
-            var res2 = client.PostAsJsonAsync("https://localhost:7009/V1/api/Trainers/AddTrainerSignUp", File.ReadAllText(path));*//*
-            var res = client.GetAsync("https://localhost:7009/V1/api/Trainers/GetAllTrainers");
+            Console.WriteLine(File.ReadAllText(path));*/
+            //var res2 = client.PostAsJsonAsync("https://localhost:7009/V1/api/Trainers/AddTrainerSignUp", File.ReadAllText(path));
+
+            //POST
+            /*Models.TrainerDetail t = new();
+            t.Email = "restapi2@gmail.com";
+            t.Password = "Pass@123";
+            var json = Newtonsoft.Json.JsonConvert.SerializeObject(t);
+            var data = new System.Net.Http.StringContent(json, encoding: System.Text.Encoding.UTF8, "application/json");
+            var url = "https://localhost:7009/V1/api/Trainers/AddTrainerSignUp";
+            using var client = new HttpClient();
+
+            var response = await client.PostAsync(url, data);
+            string responseText = response.Content.ReadAsStringAsync().Result;
+            Console.WriteLine(responseText);*/
+
+            //GET
+            var res = client.GetAsync($"https://localhost:7009/V1/api/Users/by");
             res.Wait();
             Console.WriteLine(res.Result.StatusCode);
-            var readTask = res.Result.Content.ReadAsAsync<List<Models.TrainerDetail>>();
+            var readTask = res.Result.Content.ReadAsAsync<List<Models.All>>();
             readTask.Wait();
             var result = readTask.Result;
-            foreach (Models.TrainerDetail item in result)
+            foreach (var item in result)
             {
                 Console.WriteLine(item.ToString());
             }
             Console.ReadKey();
-        }*/
+        }
 
         public void Display()
         {
@@ -59,7 +77,7 @@ namespace UILayer
                     return "TrainerLoginPage";
                 // consuming the api
                 case "4":
-                    //ApiCalls();
+                    ApiCalls();
                     return "MenuPage";
                 default:
                     Console.WriteLine("Invalid input, press enter to try again");

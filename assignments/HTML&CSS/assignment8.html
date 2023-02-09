@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment8</title>
+  <style>
+    .container{
+      width: 500px;
+      margin: auto;
+    }
+    .text__area{
+      width: 500px;
+      height: 30px;
+      border: solid;
+      outline: none;
+      border-width: 0px;
+      border-radius: 20px;
+      padding: 20px;
+      text-decoration: none;
+      letter-spacing: 1px;
+      border: 1px solid royalblue;
+      transition: 0.5s;
+    }
+    .text__area:where(:focus, :active){
+      border: none;
+      border: 1px solid rgb(65, 105, 225);
+      box-shadow: 1px 1px 3px 3px rgba(0, 64, 255, 0.3);
+    }
+    div>img{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 5px;
+      margin-top: 20px;
+      object-fit: cover;
+      width: 210px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png" alt="">
+      <input class="text__area" type="text" placeholder="Search Google or type a Url">
+    </div>
+  </div>
+</body>
+</html>

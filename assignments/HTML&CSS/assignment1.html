@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>assignment1</title>
+  <style>
+    *{
+      margin: 0;
+      border: 0;
+      box-sizing: border-box;
+    }
+    .parent{
+      max-width: 150px;
+      max-height: 700px;
+      margin: auto;
+      display: inline;
+    }
+    .child{
+      width: 150px;
+      margin: auto;
+      margin-left: 25%;
+      display: inline;
+    }
+    .img__class{
+      margin-bottom: 10px;
+      padding: 20px;
+      left: 50%;
+      right: 50%;
+      width: 20%;
+      height: 20%;
+      margin: auto;
+      transform: translate(-50,-50);
+    }
+    #img1{
+      border-radius: 40px;
+      object-fit: cover;
+      width: 220px;
+      height: auto;
+    }
+    #img2{
+      border-radius: 0;
+      object-fit: cover;
+      width: 220px;
+      height: auto;
+    }
+    #img3{
+      width: 220px;
+      height: auto;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="parent">
+      <div class="child">
+          <img class="img__class" id="img1" src="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?cs=srgb&dl=pexels-pixabay-45201.jpg&fm=jpg" alt="">
+          <img class="img__class" id="img2" src="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?cs=srgb&dl=pexels-pixabay-45201.jpg&fm=jpg" alt="">
+          <img class="img__class" id="img3" src="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?cs=srgb&dl=pexels-pixabay-45201.jpg&fm=jpg" alt="">
+      </div>
+    </div>
+  </main>
+</body>
+</html>
