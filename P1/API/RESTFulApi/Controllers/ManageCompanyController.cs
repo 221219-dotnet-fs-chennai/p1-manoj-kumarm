@@ -17,7 +17,8 @@ namespace RESTFulApiBasics.Controllers
         public IActionResult AddCompany([FromQuery][Required] string email, [FromBody]Models.AddTrainerCompany t)
         {
             var res = _logic.AddTrainerCompany(email, t);
-            if(res == "-1") return BadRequest("something went wrong");
+            if(res == "max") return BadRequest();
+            else if(res == "-1") return BadRequest("something went wrong");
             return Ok(t);
         }
 

@@ -18,6 +18,7 @@ namespace RESTFulApiBasics.Controllers
         public IActionResult AddEducation([FromQuery][Required] string email, [FromBody] Models.AddTrainerEducation t)
         {
             var res = _logic.AddTrainerEducation(email, t);
+            if(res =="max") return BadRequest("reached max");
             if(res == "-1") return BadRequest(res);
             return Created("ok",t);
         }

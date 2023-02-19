@@ -18,10 +18,10 @@ function validateAndSignUp() {
   }
 }
 
-function handleSignUp() {
+async function handleSignUp() {
   let email = document.getElementById("email").value;
   let password = document.getElementById("password").value;
-  fetch("https://localhost:7009/V1/api/Register/signup", {
+  await fetch("https://localhost:7009/V1/api/Register/signup", {
     // Adding method type
     method: "POST",
 
@@ -37,11 +37,14 @@ function handleSignUp() {
     },
   })
     // Converting to JSON
-    // .then((response) => console.log(response))
-    .then((response) => {if(response.redirected === true){window.location.href="../home-page.html"} 
-    else if(response.status == 401){alert("invalid credentials, try again or try signing up!")}})
-    // .then((response) => response.json())
-    // .then(json => console.log(json))
+    //.then((response) => console.log(response))
+    .then((response) => {if(response.redirected === true){
+      localStorage.setItem("email", email)
+      window.location.href="../html/addlocation.html"
+    } 
+    else if(response.redirected === false){alert("invalid credentials, try again or try signing up!")}})
+    //  .then((response) => response.json())
+    //  .then(json => console.log(json))
 
     // .then((response) => {if(response.status == 200){window.location.href="../home-page.html"} else if(response.status == 401){alert("invalid credentials, try again or try signing up!")}})
     // .then((response => response.json()))

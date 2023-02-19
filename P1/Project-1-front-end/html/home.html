@@ -85,6 +85,7 @@
     }
 
     .logout {
+      cursor: pointer;
       transition: all 0.5s;
       color: rgb(133, 140, 146);
     }
@@ -206,7 +207,7 @@
             </div>
           </li>
           <div class="">
-            <a class="logout" href="">Logout
+            <a class="logout" onclick="return logout()">Logout
               <i class="fa-solid fa-right-from-bracket"></i>
             </a>
           </div>
@@ -225,7 +226,16 @@
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-
+  <script>
+    function logout() {
+      if(confirm("Logging out will remove all the data from this browser")){
+        localStorage.clear()
+        window.location.href = "./login.html"
+      }else{
+        window.location.href = "./home.html"
+      }
+    }
+  </script>
 </body>
 
 </html>

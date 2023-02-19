@@ -28,7 +28,7 @@ namespace LogicLayer
                 }
                 else
                 {
-                    return "data must be unique";
+                    return "max";
                 }
             }
             else

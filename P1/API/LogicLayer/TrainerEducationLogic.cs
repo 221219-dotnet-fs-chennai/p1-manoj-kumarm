@@ -24,7 +24,7 @@ namespace LogicLayer
                 }
                 else
                 {
-                    return "-1";
+                    return "max";
                 }
             }
 

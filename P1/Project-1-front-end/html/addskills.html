@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Find Trainers</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap" rel="stylesheet">
-  <script src="../js/signup.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap" rel="stylesheet">
+  <!-- <script src="../js/handleSignIn.js"></script> -->
 
   <style>
-
-    *{
+    * {
       box-sizing: border-box;
     }
-    body{
+
+    body {
       background-color: rgb(62, 65, 68);
       font-family: 'Roboto', sans-serif;
     }
 
-    a{
+    a {
       text-decoration: none;
     }
-    .container{
+
+    .container {
       overflow: hidden;
       max-width: 600px;
       margin: auto;
@@ -32,14 +36,14 @@
       padding: 1rem;
     }
 
-    .header{
+    .header {
       display: grid;
       grid-template-columns: 1fr 1fr;
       justify-content: space-between;
       align-items: center;
     }
 
-    .close-btn{
+    .close-btn {
       width: 40px;
       border: none;
       background-color: rgb(0, 0, 0);
@@ -49,7 +53,7 @@
       align-content: center;
     }
 
-    .close-btn:is(:focus, :hover){
+    .close-btn:is(:focus, :hover) {
       width: 40px;
       color: rgb(62, 65, 68);
       border: 0;
@@ -61,31 +65,32 @@
       cursor: pointer;
     }
 
-    .logo > a{
+    .logo>a {
       color: #f3ca20;
       font-weight: bold;
     }
 
-    .logo{
+    .logo {
       margin-left: auto;
     }
 
-    .content{
+    .content {
       margin: auto;
     }
 
-    .content__title{
+    .content__title {
       margin-top: 1.5rem;
       margin-bottom: 1.4rem;
     }
-    .content__title > h1{
+
+    .content__title>h1 {
       font-family: 'Roboto', sans-serif;
       text-align: center;
       font-size: 1.5rem;
       font-weight: 500;
     }
 
-    .sign-G-btn{
+    .sign-G-btn {
       padding: 0.8rem 5.5rem;
       border: 0;
       border-radius: 1rem;
@@ -95,13 +100,13 @@
       cursor: pointer;
     }
 
-    .content__G__btn{
+    .content__G__btn {
       max-width: fit-content;
       margin: auto;
       margin-bottom: 2rem;
     }
-    
-    .sign__A__btn{
+
+    .sign__A__btn {
       padding: 0.8rem 5.5rem;
       border: 0;
       border-radius: 1rem;
@@ -111,13 +116,13 @@
       cursor: pointer;
     }
 
-    .content__A__btn{
+    .content__A__btn {
       max-width: fit-content;
       margin: auto;
       margin-bottom: 2rem;
     }
 
-    .content__gap > p{
+    .content__gap>p {
       font-family: 'Roboto', sans-serif;
       color: rgb(133, 140, 146);
       text-align: center;
@@ -125,15 +130,15 @@
       font-weight: 500;
     }
 
-    hr{
+    hr {
       border: 1px solid rgb(25, 25, 25);
     }
 
-    .content__gap{
+    .content__gap {
       margin-bottom: 2rem;
     }
 
-    .input__area{
+    .input__area {
       width: 280px;
       height: 60px;
       border: 0;
@@ -148,18 +153,18 @@
       transition: all 0.5s;
     }
 
-    .content__input{
+    .content__input {
       width: 280px;
       margin: auto;
     }
 
-    .input__area:is(:active, :focus){
+    .input__area:is(:active, :focus) {
       border: 1px solid #f3ca20;
       color: #f3ca20;
       text-align: left;
     }
 
-    .next__btn{
+    .next__btn {
       padding: 0.8rem 5.5rem;
       border: 0;
       border-radius: 1rem;
@@ -169,13 +174,13 @@
       cursor: pointer;
     }
 
-    .content__next__btn{
+    .content__next__btn {
       max-width: fit-content;
       margin: auto;
       margin-top: 2rem;
     }
 
-    .password__btn{
+    .password__btn {
       padding: 0.8rem 2rem;
       border: 1px solid rgb(133, 140, 146);
       border-radius: 1rem;
@@ -186,45 +191,47 @@
       cursor: pointer;
     }
 
-    .content__password__btn{
+    .content__password__btn {
       max-width: fit-content;
       margin: auto;
       margin-bottom: 2rem;
       margin-top: 1rem;
     }
 
-    .footer > span, a{
+    .footer>span,
+    a {
       font-family: 'Roboto', sans-serif;
       font-weight: 500;
     }
 
-    .footer > a{
+    .footer>a {
       color: #f3ca20
     }
 
-    .footer > a:is(:focus, :hover){
+    .footer>a:is(:focus, :hover) {
       cursor: pointer;
       text-decoration: underline;
     }
 
-    .input__group{
+    .input__group {
       display: flex;
       flex-direction: column;
       gap: 1rem;
     }
 
-    .footer{
+    .footer {
       margin-top: 1rem;
     }
+
     @media (min-width:280px) and (max-width:600px) {
-      .container{
+      .container {
         margin-top: 35%;
       }
     }
-
   </style>
-  
+
 </head>
+
 <body>
   <main>
     <div class="container">
@@ -236,29 +243,62 @@
       </div>
       <div class="content">
         <div class="content__title">
-          <h1>Sign Up to Find Trainers</h1>
+          <h1>Add Skill Details</h1>
         </div>
         <div class="content__gap">
-          <hr> <p class="or__text">sign up with email</p> <hr>
+          <hr>
+          <p class="or__text">Enter your skill</p>
+          <hr>
         </div>
         <div class="input__group">
           <div class="content__input">
-            <input id="email" class="input__area" type="text" placeholder="Email address">
-          </div>
-          <div class="content__input">
-            <input id="password" class="input__area" type="text" placeholder="Password">
+            <input id="skill" class="input__area" type="text" placeholder="Skill (Eg. Java)">
           </div>
         </div>
         <div class="content__next__btn">
-          <button onclick="validateAndSignUp()" class="next__btn">Next</button>
+          <button onclick="HandleAddSkill()" class="next__btn">Next</button>
         </div>
       </div>
       <div class="footer">
-        <span class="footer__text">Already have an account?</span>
-        <a href="./login.html" class="footer__signup">Sign In</a>
-        <a href="./login.html" class="footer__signup">Add other details</a>
+        <!-- <span class="footer__text"></span> -->
+        <a href="./addEducation.html" class="footer__signup">Skip for now</a>
+        <a href="./home.html" class="footer__signup">Go to home</a>
       </div>
     </div>
   </main>
+  <script>
+    async function HandleAddSkill() {
+      let skill = document.getElementById("skill").value
+      let email = localStorage.getItem('email')
+      // let counter = 
+      email = email.replace(/['‘’"“”]/g, '')
+      const API_SKILL_ADD_URL = "https://localhost:7009/V1/api/ManageSkill/add?"
+      await fetch(API_SKILL_ADD_URL + new URLSearchParams({
+        email: email
+      }), {
+        method: "POST",
+        body: JSON.stringify({
+          "skill": skill
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      }).then((response) => {
+        if (response.status === 201) {
+          alert("added the details")
+          window.location.href = "../html/addEducation.html"
+        }else if(response.status === 400) {
+          alert("Sorry you can only add atmost 3 skills")
+          window.location.href = "../html/addEducation.html"
+        } 
+        else if (response.status != 201) {
+          alert("something went wrong")
+          window.location.href = "../html/addskills.html"
+        }
+      })
+
+    }
+  </script>
 </body>
+
 </html>

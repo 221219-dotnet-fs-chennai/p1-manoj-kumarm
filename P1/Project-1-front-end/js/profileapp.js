@@ -147,7 +147,7 @@ async function showUser() {
         addlocation.style.display = "none"
         if (newUser.location.length == 0) {
           addlocation.textContent = "Add Location"
-          addlocation.href = "./addLocation.html"
+          addlocation.href = "../html/addlocation.html"
           addlocation.style.display = "block"
         } else {
           addlocation.style.direction = "none"
@@ -240,7 +240,7 @@ async function showUser() {
           addskill.style.display = "none"
           if (newUser.skills.length == 0) {
             addskill.textContent = "Add Skill"
-            addskill.href = "./addskill.html"
+            addskill.href = "../html/addskills.html"
             addskill.style.display = "block"
           } else {
             addskill.style.direction = "none"
@@ -317,7 +317,7 @@ async function showUser() {
           addcompany.style.display = "none"
           if (newUser.companies.length == 0) {
             addcompany.textContent = "Add Companies"
-            addcompany.href = "./addcompany.html"
+            addcompany.href = "../html/addCompany.html"
             addcompany.style.display = "block"
           } else {
             addcompany.style.direction = "none"
@@ -441,7 +441,7 @@ async function showUser() {
           addeducation.style.display = "none"
           if (newUser.education.length == 0) {
             addeducation.textContent = "Add Education"
-            addeducation.href = "./addeducation.html"
+            addeducation.href = "../html/addeducation.html"
             addeducation.style.display = "block"
           } else {
             addeducation.style.direction = "none"

@@ -21,6 +21,7 @@ namespace RESTFulApiBasics.Controllers
             try
             {
                 var res = _logic.AddTrainerSkill(email, _data);
+                if(res == "max") return BadRequest("reached max");
                 if(res == "-1") return BadRequest("something went wrong");
                 return Created("added",_data);
             }
