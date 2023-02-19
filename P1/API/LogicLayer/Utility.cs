@@ -25,15 +25,15 @@ namespace LogicLayer
                 var trainer = context.TrainerEducations.Where(item => item.Trainereducationid == id && item.Institute == name).FirstOrDefault();
                 if (trainer != null)
                 {
-                    if (trainer.Institute != null && _data.Institute.IsNullOrEmpty()) trainer.Institute = trainer.Institute;
+                    if (trainer.Institute != null && _data.Institute.IsNullOrEmpty() || _data.Institute == null || _data.Institute == "" || _data.Institute == " ") trainer.Institute = trainer.Institute;
                     else trainer.Institute = _data.Institute;
-                    if (trainer.Degreename != null && _data.Degreename.IsNullOrEmpty()) trainer.Degreename = trainer.Degreename;
+                    if (trainer.Degreename != null && _data.Degreename.IsNullOrEmpty() || _data.Degreename == null || _data.Degreename == "" || _data.Degreename == " ") trainer.Degreename = trainer.Degreename;
                     else trainer.Degreename = _data.Degreename;
-                    if (trainer.Gpa != null && _data.Gpa.IsNullOrEmpty()) trainer.Gpa = trainer.Gpa;
+                    if (trainer.Gpa != null && _data.Gpa.IsNullOrEmpty() || _data.Gpa == null || _data.Gpa == "" || _data.Gpa == " ") trainer.Gpa = trainer.Gpa;
                     else trainer.Gpa = _data.Gpa;
-                    if (trainer.Startdate != null && _data.Startdate.IsNullOrEmpty()) trainer.Startdate = trainer.Startdate;
+                    if (trainer.Startdate != null && _data.Startdate.IsNullOrEmpty() || _data.Startdate == null || _data.Startdate == "" || _data.Startdate == " ") trainer.Startdate = trainer.Startdate;
                     else trainer.Startdate = _data.Startdate;
-                    if (trainer.Enddate != null && _data.Enddate.IsNullOrEmpty()) trainer.Enddate = trainer.Enddate;
+                    if (trainer.Enddate != null && _data.Enddate.IsNullOrEmpty() || _data.Enddate == null || _data.Enddate == "" || _data.Enddate == " ") trainer.Enddate = trainer.Enddate;
                     else trainer.Enddate = _data.Enddate;
                 }
                 return trainer;
@@ -49,16 +49,16 @@ namespace LogicLayer
         {
             try
             {
-                var trainer = context.TrainerCompanies.Where(item=>item.Trainercompanyid == id && item.Companyname == name).FirstOrDefault();
+                var trainer = context.TrainerCompanies.Where(item=>item.Trainercompanyid == id && item.Companyname == name).First();
                 if(trainer != null)
                 {
-                    if(trainer.Companyname != null && _data.Companyname.IsNullOrEmpty()) trainer.Companyname = trainer.Companyname;
+                    if(trainer.Companyname != null && _data.Companyname.IsNullOrEmpty() || _data.Companyname == "" || _data.Companyname == " " || _data.Companyname == null) trainer.Companyname = trainer.Companyname;
                     else trainer.Companyname = _data.Companyname;
-                    if (trainer.Title != null && _data.Title.IsNullOrEmpty()) trainer.Title = trainer.Title;
+                    if (trainer.Title != null && _data.Title.IsNullOrEmpty() || _data.Title == "" || _data.Title == " " || _data.Title == null) trainer.Title = trainer.Title;
                     else trainer.Title = _data.Title; 
-                    if (trainer.Startyear != null && _data.Startyear.IsNullOrEmpty()) trainer.Startyear = trainer.Startyear;
+                    if (trainer.Startyear != null && _data.Startyear.IsNullOrEmpty() || _data.Startyear == "" || _data.Startyear == " " || _data.Startyear == null) trainer.Startyear = trainer.Startyear;
                     else trainer.Startyear = _data.Startyear; 
-                    if (trainer.Endyear != null && _data.Endyear.IsNullOrEmpty()) trainer.Endyear = trainer.Endyear;
+                    if (trainer.Endyear != null && _data.Endyear.IsNullOrEmpty() || _data.Endyear == "" || _data.Endyear == " " || _data.Endyear == null) trainer.Endyear = trainer.Endyear;
                     else trainer.Endyear = _data.Endyear;
                 }
                 return trainer;
@@ -76,9 +76,9 @@ namespace LogicLayer
                 var trainer = context.TrainerLocations.Where(item => item.Trainerlocationid == id).First();
                 if(trainer != null)
                 {
-                    if (trainer.Zipcode != null && _data.Zipcode.IsNullOrEmpty()) trainer.Zipcode = trainer.Zipcode;
+                    if (trainer.Zipcode != null && _data.Zipcode.IsNullOrEmpty() || _data.Zipcode == null || _data.Zipcode == "" || _data.Zipcode == " ") trainer.Zipcode = trainer.Zipcode;
                     else trainer.Zipcode = _data.Zipcode;
-                    if (trainer.City != null && _data.City.IsNullOrEmpty()) trainer.City = trainer.City;
+                    if (trainer.City != null && _data.City.IsNullOrEmpty() || _data.City == null || _data.City == "" || _data.City == " ") trainer.City = trainer.City;
                     else trainer.City = _data.City;
                 }
                 return trainer;
@@ -96,7 +96,7 @@ namespace LogicLayer
                 var trainer = context.TrainerSkills.Where(item => item.Trainerskillid == id && item.Skill == oldSkill).First();
                 if (trainer != null)
                 {
-                    if (trainer.Skill != null && _data.Skill.IsNullOrEmpty())
+                    if (trainer.Skill != null && _data.Skill.IsNullOrEmpty() || _data.Skill == null || _data.Skill == "" || _data.Skill == " ")
                     {
                         trainer.Skill = trainer.Skill;
                     }
@@ -125,7 +125,7 @@ namespace LogicLayer
                 var trainer = context.TrainerDetails.Where(item => item.Trainerid == i).First();
                 if (trainer != null)
                 {
-                    if (trainer.Fullname != null && _data.Fullname.IsNullOrEmpty() || _data.Fullname == "" || _data.Fullname == " ")
+                    if (trainer.Fullname != null && _data.Fullname.IsNullOrEmpty() || _data.Fullname == "" || _data.Fullname == " " || _data.Fullname == null)
                     {
                         trainer.Fullname = trainer.Fullname;
                     }
@@ -133,7 +133,7 @@ namespace LogicLayer
                     {
                         trainer.Fullname = _data.Fullname;
                     }
-                    if (trainer.Phone != null && _data.Phone.IsNullOrEmpty() || _data.Phone == "" || _data.Phone == " ")
+                    if (trainer.Phone != null && _data.Phone.IsNullOrEmpty() || _data.Phone == "" || _data.Phone == " " || _data.Phone == null)
                     {
                         trainer.Phone = trainer.Phone;
                     }
@@ -141,7 +141,7 @@ namespace LogicLayer
                     {
                         trainer.Phone = _data.Phone;
                     }
-                    if (trainer.Website != null && _data.Website.IsNullOrEmpty() || _data.Website == "" || _data.Website == " ")
+                    if (trainer.Website != null && _data.Website.IsNullOrEmpty() || _data.Website == "" || _data.Website == " " || _data.Website == null)
                     {
                         trainer.Website = trainer.Website;
                     }
@@ -149,7 +149,7 @@ namespace LogicLayer
                     {
                         trainer.Website = _data.Website;
                     }
-                    if (trainer.Aboutme != null && _data.Aboutme.IsNullOrEmpty() || _data.Aboutme == "" || _data.Aboutme == " ")
+                    if (trainer.Aboutme != null && _data.Aboutme.IsNullOrEmpty() || _data.Aboutme == "" || _data.Aboutme == " " || _data.Aboutme == null)
                     {
                         trainer.Aboutme = trainer.Aboutme;
                     }
@@ -157,7 +157,7 @@ namespace LogicLayer
                     {
                         trainer.Aboutme = _data.Aboutme;
                     }
-                    if (trainer.Age != null && _data.Age.IsNullOrEmpty() || _data.Age == "" || _data.Age == " ")
+                    if (trainer.Age != null && _data.Age.IsNullOrEmpty() || _data.Age == "" || _data.Age == " " || _data.Age == null)
                     {
                         trainer.Age = trainer.Age;
                     }
@@ -165,7 +165,7 @@ namespace LogicLayer
                     {
                         trainer.Age = _data.Age;
                     }
-                    if (trainer.Gender != null && _data.Gender.IsNullOrEmpty() || _data.Gender == "" || _data.Gender == " ")
+                    if (trainer.Gender != null && _data.Gender.IsNullOrEmpty() || _data.Gender == "" || _data.Gender == " " || _data.Gender == null)
                     {
                         trainer.Gender = trainer.Gender;
                     }

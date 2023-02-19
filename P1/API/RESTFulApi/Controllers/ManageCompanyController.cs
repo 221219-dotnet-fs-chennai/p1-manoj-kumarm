@@ -25,8 +25,8 @@ namespace RESTFulApiBasics.Controllers
         public IActionResult UpdateCompany([FromQuery] [Required]string email, [FromQuery][Required] string companyName, [FromBody]Models.UpdateTrainerCompany t)
         {
             var res = _logic.UpdateTrainerCompany(email, companyName, t);
-            if (res == "-1") return BadRequest("something went wrong");
-            return Ok(t);
+            if (res == null) return BadRequest("something went wrong");
+            return Ok(res);
         }
 
         [HttpDelete("delete")]

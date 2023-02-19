@@ -13,7 +13,7 @@ namespace LogicLayer
         /// calls update method form EFRepo
         /// </summary>
         /// <param name="_data"></param>
-        string UpdateTrainerCompany(string email,string companyname, Models.UpdateTrainerCompany _data);
+        Models.TrainerCompany UpdateTrainerCompany(string email,string companyname, Models.UpdateTrainerCompany _data);
 
         /// <summary>
         /// calls delete method from EFRepo
