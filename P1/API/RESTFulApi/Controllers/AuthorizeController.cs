@@ -21,7 +21,7 @@ namespace RESTFulApiBasics.Controllers
             }
             else
             {
-                return Ok(email);
+                return Redirect("https://localhost:7009/V1/api/Users/all");
             }
         }
     }

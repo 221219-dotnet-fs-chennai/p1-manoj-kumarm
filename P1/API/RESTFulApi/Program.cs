@@ -66,7 +66,7 @@ if (app.Environment.IsDevelopment())
 }
 
 //use cors
-app.UseCors();
+app.UseCors(AllowAllPolicy);
 
 //
 app.UseHttpsRedirection();

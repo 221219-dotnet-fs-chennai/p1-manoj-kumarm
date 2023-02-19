@@ -16,8 +16,8 @@ namespace RESTFulApiBasics.Controllers
             _logic = logic;
         }
 
-        [HttpGet("me/{email}")]
-        public IActionResult GetMe([BindRequired][FromRoute] string email)
+        [HttpGet("me")]
+        public IActionResult GetMe([BindRequired][FromQuery] string email)
         {
             try
             {

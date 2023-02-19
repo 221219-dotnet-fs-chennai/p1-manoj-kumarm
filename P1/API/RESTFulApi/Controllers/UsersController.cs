@@ -1,4 +1,5 @@
 ﻿using LogicLayer;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.Data.SqlClient;
@@ -7,6 +8,7 @@ using Microsoft.Extensions.Caching.Memory;
 
 namespace RESTFulApiBasics.Controllers
 {
+    
     [Route("V1/api/[controller]")]
     public class UsersController : Controller
     {
@@ -37,6 +39,7 @@ namespace RESTFulApiBasics.Controllers
             }
         }
 
+        [EnableCors("AllowAllPolicy")]
         [HttpGet("all")]
         public IActionResult FindAllUsers()
         {

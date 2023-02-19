@@ -164,6 +164,50 @@ namespace DataFluentApi
         {
             var tr = _context.TrainerDetails;
             var sk = _context.TrainerSkills;
+            var tl = _context.TrainerLocations;
+            var tc = _context.TrainerCompanies;
+            var te = _context.TrainerEducations;
+            var res = (from t in tr
+                       where t.Trainerid == id
+                       select new Models.All
+                       {
+                           Email = t.Email,
+                           Name = t.Fullname,
+                           Age = t.Age,
+                           Gender = t.Gender,
+                           Phone = t.Phone,
+                           Website = t.Website,
+                           AboutMe = t.Aboutme,
+                           Location = (from l in tl
+                                       where l.Trainerlocationid == t.Trainerid
+                                       select new Models.EditTrainerLocation { City = l.City, Zipcode = l.Zipcode }).ToList(),
+                           Skills = (from r in sk
+                                     where r.Trainerskillid == t.Trainerid
+                                     orderby r.Skill
+                                     select r.Skill).Take(3).ToList(),
+                           Education = (from e in te
+                                        where e.Trainereducationid == t.Trainerid
+                                        select new Models.UpdateTrainerEducation
+                                        {
+                                            Institute = e.Institute,
+                                            Degreename = e.Degreename,
+                                            Gpa = e.Gpa,
+                                            Startdate = e.Startdate,
+                                            Enddate = e.Enddate
+                                        }).Take(3).ToList(),
+                           Companies = (from c in tc
+                                        where c.Trainercompanyid == t.Trainerid
+                                        select new Models.UpdateTrainerCompany
+                                        {
+                                            Companyname = c.Companyname,
+                                            Title = c.Title,
+                                            Startyear = c.Startyear,
+                                            Endyear = c.Endyear
+                                        }).Take(3).ToList()
+                       }); ;
+            return res.ToList();
+            /*var tr = _context.TrainerDetails;
+            var sk = _context.TrainerSkills;
             var res = (from t in tr
                        where t.Trainerid == id
                        select new Models.All
@@ -181,7 +225,8 @@ namespace DataFluentApi
                                      select r.Skill).Take(3).ToList()
 
                        }); ;
-            return res.ToList();
+            return res.ToList();*/
+
         }
         public string UpdateTrainerDetails(DataFluentApi.Entities.TrainerDetail _data)
         {
