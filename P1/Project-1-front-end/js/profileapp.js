@@ -14,6 +14,66 @@ const API_EDU_DELETE = "https://localhost:7009/V1/api/ManageEducation/delete?"
 let email = localStorage.getItem('email')
 email = email.replace(/['‘’"“”]/g, '')
 
+const delDiv = document.createElement('div')
+const deleteBtn = document.createElement('botton')
+deleteBtn.textContent = "delete account"
+delDiv.appendChild(deleteBtn)
+deleteBtn.addEventListener("click", (e) => {
+  e.preventDefault()
+  const API_DELETE_URL = "https://localhost:7009/V1/api/ManageUser/delete?"
+  let email = localStorage.getItem("email")
+  email = email.replace(/['‘’"“”]/g, '')
+  let password = prompt("Enter your password")
+  fetch(API_DELETE_URL + new URLSearchParams({
+    email: email,
+    password: password
+  }), {
+    method: "DELETE",
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  }).then((response) => {
+  if (response.status === 204) {
+    window.location.href = "../html/addEducation.html"
+  }else if(response.status === 400) {
+    alert("Wrong password!")
+    window.location.href = "../html/profile.html"
+  } 
+  else {
+    alert("something went wrong")
+    window.location.href = "../html/profile.html"
+  }
+})
+})
+
+// async function deleteAcc() {
+//   const API_DELETE_URL = "https://localhost:7009/V1/api/ManageUser/delete?"
+//   let email = localStorage.getItem("email")
+//   email = email.replace(/['‘’"“”]/g, '')
+//   let password = prompt("Enter your password")
+//   await fetch(API_DELETE_URL + new URLSearchParams({
+//     email: email,
+//     password: password
+//   }), {
+//     method: "DELETE",
+//     headers: {
+//       "Content-type": "application/json; charset=UTF-8",
+//     },
+//   }).then((response) => {
+//   if (response.status === 204) {
+//     window.location.href = "../html/addEducation.html"
+//   }else if(response.status === 400) {
+//     alert("Wrong password!")
+//     window.location.href = "../html/profile.html"
+//   } 
+//   else {
+//     alert("something went wrong")
+//     window.location.href = "../html/profile.html"
+//   }
+// })
+
+// }
+
 async function showUser() {
   userElem.innerHTML = ''
   await fetch(API_URL + new URLSearchParams({
@@ -572,7 +632,7 @@ async function showUser() {
 
 
 
-
+        userElem.appendChild(delDiv)
         div.appendChild(detail)
         div.appendChild(locationDiv)
         div.appendChild(skillGrp)
