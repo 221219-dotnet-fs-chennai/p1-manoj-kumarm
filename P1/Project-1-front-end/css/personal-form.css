@@ -1,0 +1,164 @@
+:root{
+  --Off-white: hsl(36, 100%, 99%);
+  --Grayish-blue: hsl(233, 8%, 79%);
+  --Dark-grayish-blue: hsl(236, 13%, 42%);
+  --Very-dark-blue: hsl(240, 100%, 5%);
+
+  --Soft-orange: hsl(35, 77%, 62%);
+  --Soft-red: hsl(5, 85%, 63%);
+
+  --f-ff: 'Roboto', sans-serif;
+}
+
+.submit-btn{
+  background-color: var(--Soft-red);
+  border: none;
+}
+
+
+.next-btn{
+  height: auto;
+  background-color: var(--Soft-orange);
+}
+
+.form-section{
+  margin-left: 22rem;
+  margin-top: 3rem;
+}
+
+.costom-btn-group{
+  margin: auto;
+}
+
+.inline{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+h1{
+  width: fit-content;
+  margin: auto;
+  color: var(--Very-dark-blue);
+}
+
+.group{
+  display: inherit;
+  max-width: 300px;
+  margin: auto;
+  margin-top: 5%;
+}
+
+.costom-btn{
+  cursor: pointer;
+  padding: 0.3rem 8.2rem;
+  border: none;
+  background-color: var(--Soft-red);
+  color: var(--Off-white);
+  font-family: var(--f-ff);
+  font-weight: 500;
+  font-size: 0.775rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+}
+
+
+
+.skip{
+  background-color: var(--Very-dark-blue);
+  color: var(--Off-white);
+  border:2px dashed var(--Very-dark-blue);
+  font-size: 0.875rem;
+  width: 300px;
+}
+
+.skip-btn{
+  margin-bottom: 1rem;
+}
+
+.next{
+  background-color: #ffd43b;
+  color: var(--Very-dark-blue);
+  border:2px dashed var(--Very-dark-blue);
+  font-size: 0.875rem;
+  width: 300px;
+  color: var(--Off-white);
+}
+
+.next-icon{
+  margin-left: 1rem;
+
+}
+
+.skip-icon{
+  margin-left: 1rem;
+}
+
+
+.costom-btn:where(:hover, :focus, :active){
+  background-color: var(--Very-dark-blue);
+  color: var(--Off-white);
+  
+}
+
+.form-group{
+  margin-bottom: 1rem;
+}
+
+.form-lable{
+  margin-bottom: 0.8rem;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Avoid text decoration
+*/
+a{
+  text-decoration: none;
+}

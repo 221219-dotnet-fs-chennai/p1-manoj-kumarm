@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/afbe6959be.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./css/skill-form.css">
+  <script src="./js/handleSkill.js"></script>
+  <title>Find Trainers</title>
+</head>
+<body>
+  <main>
+    <h1>Add Skills</h1>
+    <form class="group">
+      <div class="form-group">
+        <label class="form-lable" for="exampleInputEmail1">Skill-1</label>
+        <input type="text" class="form-control" id="skill1" aria-describedby="skillhelp" placeholder="Java or Python or Dotnet">
+      </div>
+      <div class="form-group">
+        <label class="form-lable" for="exampleInputEmail1">Skill-2</label>
+        <input type="text" class="form-control" id="skill2" aria-describedby="skillhelp" placeholder="Java or Python or Dotnet">
+      </div>
+      <div class="form-group">
+        <label class="form-lable" for="exampleInputEmail1">Skill-3</label>
+        <input type="text" class="form-control" id="skill2" aria-describedby="skillhelp" placeholder="Java or Python or Dotnet">
+      </div>
+      <div class="submit-btn">
+        <button onclick="addSkills()" type="submit" class="costom-btn">Submit</button>
+      </div>
+      <div class="skip-btn">
+        <a class="btn-outline-light" href="home-page.html" target="_self">skip for now<i class="fa-solid fa-forward skip-icon"></i></a>
+        <!-- <button onclick="switchToHome()" class="skip">Skip for now<i class="fa-solid fa-forward skip-icon"></i></button> -->
+      </div>
+        <div class="">
+          <a class="btn-outline-primary" target="_self" href="personal-details-page.html">
+            Next<i class="fa-solid fa-circle-arrow-right next-icon"></i>
+            <!-- <button class="next">Next<i class="fa-solid fa-circle-arrow-right next-icon"></i></button> -->
+          </a>
+        </div>
+    </form>
+  </main>
+</body>
+</html>

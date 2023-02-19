@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Find Trainers</title>
+  <script src="https://kit.fontawesome.com/afbe6959be.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      max-width: 1200px;
+      margin: auto;
+      background-color: rgb(62, 65, 68);
+      font-family: 'Roboto', sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    hr {
+      opacity: 0.2;
+    }
+
+    .nav {
+      max-width: 1200px;
+      padding: 4px;
+      margin: auto;
+    }
+
+    .container-nav {
+      margin-top: 0.3rem;
+      height: 60px;
+      background-color: rgb(0, 0, 0);
+      color: white;
+      border-radius: 1rem;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-section {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+    }
+
+    .nav__section {
+      color: rgb(133, 140, 146);
+      transition: all 0.5s;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    .nav__section>a {
+      color: rgb(133, 140, 146);
+      transition: all 0.5s;
+    }
+
+    .nav__section>a:is(:hover, :active, :focus) {
+      color: #f3ca20;
+    }
+
+    .nav__section:is(:active, :hover, :focus) {
+      color: #f3ca20;
+    }
+
+    .logo {
+      transition: all 0.5s;
+      color: #1DA1F2;
+    }
+
+    .logo:is(:hover, :active, :focus) {
+      color: rgb(133, 140, 146);
+    }
+
+    .logout {
+      transition: all 0.5s;
+      color: rgb(133, 140, 146);
+    }
+
+    .logout:is(:hover, :active, :focus) {
+      color: #FF0000;
+    }
+
+    li {
+      list-style: none;
+
+    }
+
+    input::placeholder {
+      opacity: 1;
+      color: rgb(0, 0, 0);
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .icon {
+      color: #f3ca20;
+      font-size: 1.5rem;
+    }
+
+    .user {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .container {
+      margin-left: 0.4rem;
+      margin-top: 0.4rem;
+      margin-right: 0.4rem;
+      background-color: rgb(0, 0, 0);
+      color: white;
+      border-radius: 1rem;
+      padding: 1rem;
+    }
+
+    .card {
+      text-align: center;
+    }
+
+    .card__user__details {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+    }
+
+    .card__user__loc__grp {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card__user__skill__grp {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card__user__comp__grp {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card__user__edu__grp {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    button {
+      display: none;
+    }
+
+    @media (min-width:280px) and (max-width:600px) {
+      .user {
+        width: fit-content;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2rem;
+        justify-content: center;
+        padding: 2rem;
+      }
+
+      button {
+        display: none;
+      }
+
+      .container-nav {
+        width: 500px;
+        margin: auto;
+      }
+
+      .nav__section {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <nav class="nav">
+    <div class="container-nav">
+      <div class="">
+        <a class="logo" href="">Find Trainers
+          <i class="fa-solid fa-terminal"></i>
+        </a>
+      </div>
+      <div class="" id="">
+        <ul class="nav-section">
+          <li class="">
+            <div class="nav__section">
+              <a class="nav__user__logo" href="./profile.html">Profile
+                <i class="fa-solid fa-user"></i>
+              </a>
+            </div>
+          </li>
+          <div class="">
+            <a class="logout" href="">Logout
+              <i class="fa-solid fa-right-from-bracket"></i>
+            </a>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+
+    <div class="user"> </div>
+    <script src="../js/homeapp.js"></script>
+    <button onClick="window.location.reload();"></button>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
