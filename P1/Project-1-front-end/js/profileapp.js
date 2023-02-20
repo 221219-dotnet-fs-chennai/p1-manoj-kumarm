@@ -1,5 +1,6 @@
 const userElem = document.querySelector(".user__profile")
 const API_URL = "https://localhost:7009/V1/api/ManageUser/me?"
+
 const API_SKILL_UPDATE_URL = "https://localhost:7009/V1/api/ManageSkill/update?"
 const API_LOC_UPDATE_URL = "https://localhost:7009/V1/api/ManageLocation/update?"
 const API_USER_UPDATE_URL = "https://localhost:7009/V1/api/ManageUser/update?"
@@ -11,68 +12,12 @@ const API_SKILL_DELETE = "https://localhost:7009/V1/api/ManageSkill/delete?"
 const API_COM_DELETE = "https://localhost:7009/V1/api/ManageCompany/delete?"
 const API_EDU_DELETE = "https://localhost:7009/V1/api/ManageEducation/delete?"
 
+var flag = false
 let email = localStorage.getItem('email')
 email = email.replace(/['‘’"“”]/g, '')
 
 const delDiv = document.createElement('div')
-const deleteBtn = document.createElement('botton')
-deleteBtn.textContent = "delete account"
-delDiv.appendChild(deleteBtn)
-deleteBtn.addEventListener("click", (e) => {
-  e.preventDefault()
-  const API_DELETE_URL = "https://localhost:7009/V1/api/ManageUser/delete?"
-  let email = localStorage.getItem("email")
-  email = email.replace(/['‘’"“”]/g, '')
-  let password = prompt("Enter your password")
-  fetch(API_DELETE_URL + new URLSearchParams({
-    email: email,
-    password: password
-  }), {
-    method: "DELETE",
-    headers: {
-      "Content-type": "application/json; charset=UTF-8",
-    },
-  }).then((response) => {
-  if (response.status === 204) {
-    window.location.href = "../html/addEducation.html"
-  }else if(response.status === 400) {
-    alert("Wrong password!")
-    window.location.href = "../html/profile.html"
-  } 
-  else {
-    alert("something went wrong")
-    window.location.href = "../html/profile.html"
-  }
-})
-})
-
-// async function deleteAcc() {
-//   const API_DELETE_URL = "https://localhost:7009/V1/api/ManageUser/delete?"
-//   let email = localStorage.getItem("email")
-//   email = email.replace(/['‘’"“”]/g, '')
-//   let password = prompt("Enter your password")
-//   await fetch(API_DELETE_URL + new URLSearchParams({
-//     email: email,
-//     password: password
-//   }), {
-//     method: "DELETE",
-//     headers: {
-//       "Content-type": "application/json; charset=UTF-8",
-//     },
-//   }).then((response) => {
-//   if (response.status === 204) {
-//     window.location.href = "../html/addEducation.html"
-//   }else if(response.status === 400) {
-//     alert("Wrong password!")
-//     window.location.href = "../html/profile.html"
-//   } 
-//   else {
-//     alert("something went wrong")
-//     window.location.href = "../html/profile.html"
-//   }
-// })
-
-// }
+delDiv.className = "main__container"
 
 async function showUser() {
   userElem.innerHTML = ''
@@ -91,6 +36,23 @@ async function showUser() {
 
         const detail = document.createElement('div')
         detail.className = "detail__card"
+        const detail_heading = document.createElement('h4')
+        const location_heading = document.createElement('h4')
+        const skill_heading = document.createElement('h4')
+        const education_heading = document.createElement('h4')
+        const company_heading = document.createElement('h4')
+        detail_heading.className = "personal__heading"
+        location_heading.className = "personal__heading"
+        skill_heading.className = "personal__heading"
+        education_heading.className = "personal__heading"
+        company_heading.className = "personal__heading"
+        detail_heading.textContent = "Personal Details"
+        location_heading.textContent ="Location Details"
+        skill_heading.textContent ="Skill Details"
+        education_heading.textContent ="Education Details"
+        company_heading.textContent ="Experience Details"
+
+        //detail.appendChild(detail_heading)
         const name = document.createElement('input')
         name.value = newUser.name
         name.className = "user__name"
@@ -119,51 +81,51 @@ async function showUser() {
 
         //form
         const user_details_grp = document.createElement('div')
+        user_details_grp.className = "user__form__and__inputs"
         const Update_user_div = document.createElement('div')
         Update_user_div.className = "user_details_form_div"
         const detail_form = document.createElement('form')
+        Update_user_div.appendChild(detail_form)
         detail_form.className = "details__form"
+        user_details_grp.appendChild(detail_form)
+        detail.appendChild(Update_user_div)
 
-        const nameLable = document.createElement('label')
-        nameLable.textContent = "Name"
         const name_input = document.createElement('input')
+        name_input.placeholder = "Name"
         name_input.className = "name_form_input"
-        detail_form.appendChild(nameLable)
         detail_form.appendChild(name_input)
 
-        const phoneLable = document.createElement('label')
-        phoneLable.textContent = "Phone"
         const phone_input = document.createElement('input')
+        phone_input.placeholder = "Phone"
         phone_input.className = "phone_form_input"
-        detail_form.appendChild(phoneLable)
         detail_form.appendChild(phone_input)
 
         const websiteLable = document.createElement('label')
         websiteLable.textContent = "Website"
         const website_input = document.createElement('input')
+        website_input.placeholder = "Website"
         website_input.className = "website_form_input"
-        detail_form.appendChild(websiteLable)
         detail_form.appendChild(website_input)
 
         const genderLable = document.createElement('label')
         genderLable.textContent = "Gender"
         const gender_input = document.createElement('input')
+        gender_input.placeholder = "Gender"
         gender_input.className = "gender_form_input"
-        detail_form.appendChild(genderLable)
         detail_form.appendChild(gender_input)
 
         const ageLable = document.createElement('label')
         ageLable.textContent = "Age"
         const age_input = document.createElement('input')
         age_input.className = "age_form_input"
-        detail_form.appendChild(ageLable)
+        age_input.placeholder = "Age"
         detail_form.appendChild(age_input)
 
         const aboutmeLable = document.createElement('label')
         aboutmeLable.textContent = "Aboutme"
         const aboutme_input = document.createElement('input')
-        age_input.className = "aboutme_form_input"
-        detail_form.appendChild(aboutmeLable)
+        aboutme_input.className = "aboutme_form_input"
+        aboutme_input.placeholder = "About Me"
         detail_form.appendChild(aboutme_input)
 
 
@@ -198,7 +160,12 @@ async function showUser() {
             headers: {
               "Content-type": "application/json; charset=UTF-8",
             },
-          }).then((response) => console.log(response))
+          }).then((response) => {
+            if(response.status == 201) flag = true
+            else{
+              flag = false
+            }
+          })
         })
 
 
@@ -238,7 +205,7 @@ async function showUser() {
 
           //delete
           delete_loc.addEventListener("click", (e) => {
-            e.preventDefault()
+            //e.preventDefault()
             fetch(API_LOC_DELETE + new URLSearchParams({
               email: email
             }), {
@@ -246,7 +213,10 @@ async function showUser() {
               headers: {
                 "Content-type": "application/json; charset=UTF-8",
               },
-            }).then((response) => console.log(response))
+            }).then((response) => {
+              if(response.status == 204) flag = true
+              else flag = false
+            })
           })
 
 
@@ -259,19 +229,21 @@ async function showUser() {
           zipcode_lable.textContent = "zipcode"
           const city_lable = (document.createElement('lable'))
           city_lable.textContent = "city"
-          location_form.appendChild(zipcode_lable)
+          // location_form.appendChild(zipcode_lable)
           const zipcode_input = document.createElement('input')
           location_form.appendChild(zipcode_input)
-          location_form.appendChild(city_lable)
+          zipcode_input.placeholder = "Zipcode"
+          // location_form.appendChild(city_lable)
           const city_input = document.createElement('input')
           location_form.appendChild(city_input)
+          city_input.placeholder = "City"
           form__div.className = "update__location__form"
           form__div.appendChild(location_form)
 
           //Fetch - PUT
           Updatebtn_loc.addEventListener("click", () => {
-            //show hide form
             locationDiv.appendChild(form__div)
+            //show hide form
             if (form__div.style.display !== "none") {
               form__div.style.display = "none"
             } else {
@@ -289,7 +261,10 @@ async function showUser() {
               headers: {
                 "Content-type": "application/json; charset=UTF-8",
               },
-            }).then((response) => console.log(response))
+            }).then((response) => {
+              if(response.status == 201) flag = true
+              else flag = false
+            })
           })
 
         })
@@ -298,7 +273,7 @@ async function showUser() {
 
         const addskill = document.createElement('a')
           addskill.style.display = "none"
-          if (newUser.skills.length == 0) {
+          if (newUser.skills.length < 3) {
             addskill.textContent = "Add Skill"
             addskill.href = "../html/addskills.html"
             addskill.style.display = "block"
@@ -311,6 +286,7 @@ async function showUser() {
 
         newUser.skills.forEach(skill => {
           const skillDiv = document.createElement('div')
+          skillDiv.className = "skill__div"
           // delete
           const Deletebtn_skill = document.createElement('button')
           Deletebtn_skill.className = "delete__btn"
@@ -343,7 +319,10 @@ async function showUser() {
               headers: {
                 "Content-type": "application/json; charset=UTF-8",
               },
-            }).then((response) => console.log(response))
+            }).then((response) => {
+              if(response.status == 204) flag = true
+              else flag = false
+            })
           })
 
           //update
@@ -363,7 +342,10 @@ async function showUser() {
               headers: {
                 "Content-type": "application/json; charset=UTF-8",
               },
-            }).then((response) => console.log(response))
+            }).then((response) => {
+              if(response.status == 201) flag = true
+              else flag = false
+            })
           })
 
           
@@ -375,7 +357,7 @@ async function showUser() {
         //Company
         const addcompany = document.createElement('a')
           addcompany.style.display = "none"
-          if (newUser.companies.length == 0) {
+          if (newUser.companies.length < 3) {
             addcompany.textContent = "Add Companies"
             addcompany.href = "../html/addCompany.html"
             addcompany.style.display = "block"
@@ -383,8 +365,12 @@ async function showUser() {
             addcompany.style.direction = "none"
           }
         const companiesgrp = document.createElement('article')
+
+        companiesgrp.className = "company_grp"
         const companyDiv1 = document.createElement('div')
+        companyDiv1.className = "company_card"
         companiesgrp.appendChild(addcompany)
+        companiesgrp.appendChild(companyDiv1)
         newUser.companies.forEach(comp => {
           companyDiv1.className = "card__user__comp__grp"
           const comp_name = document.createElement('input')
@@ -422,9 +408,13 @@ async function showUser() {
           const compform = document.createElement('form')
           compform.className = "comp__form"
           const comp_name_input = document.createElement('input')
+          comp_name_input.placeholder = "Company Name"
           const comp_title_input = document.createElement('input')
+          comp_title_input.placeholder = "Title"
           const comp_start_input = document.createElement('input')
+          comp_start_input.placeholder = "Start Date"
           const comp_end_input = document.createElement('input')
+          comp_end_input.placeholder = "End Date"
           const name_lable = document.createElement('lable')
           name_lable.textContent = "Company Name"
           const title_lable = document.createElement('lable')
@@ -433,18 +423,14 @@ async function showUser() {
           start_lable.textContent = "Start Year"
           const end_lable = document.createElement('lable')
           end_lable.textContent = "End Year"
-          compform.appendChild(name_lable)
           compform.appendChild(comp_name_input)
-          compform.appendChild(title_lable)
           compform.appendChild(comp_title_input)
-          compform.appendChild(start_lable)
           compform.appendChild(comp_start_input)
-          compform.appendChild(end_lable)
           compform.appendChild(comp_end_input)
 
           const compformDiv = document.createElement('div')
           compformDiv.className = "comp_form_grp"
-          //compformDiv.appendChild(Updatebtn_comp)
+          companiesgrp.appendChild(Updatebtn_comp)
           compformDiv.appendChild(Deletebtn_comp)
 
           //delete
@@ -458,13 +444,17 @@ async function showUser() {
               headers: {
                 "Content-type": "application/json; charset=UTF-8",
               },
-            }).then((response) => console.log(response))
+            }).then((response) => {
+              if(response.status == 204) flag = true
+              else flag = false
+            })
           })
 
 
+          companyDiv1.appendChild(compform)
+          compform.style.display = "none"
           //update
           Updatebtn_comp.addEventListener("click", (e) => {
-            companyDiv1.appendChild(compform)
             e.preventDefault()
             if (compform.style.display !== "none") {
               compform.style.display = "none"
@@ -485,7 +475,10 @@ async function showUser() {
               headers: {
                 "Content-type": "application/json; charset=UTF-8",
               },
-            }).then((response) => console.log(response))
+            }).then((response) => {
+              if(response.status == 201) flag = true
+              else flag = false
+            })
 
           })
 
@@ -499,7 +492,7 @@ async function showUser() {
         const educationgrp = document.createElement('article')
         const addeducation = document.createElement('a')
           addeducation.style.display = "none"
-          if (newUser.education.length == 0) {
+          if (newUser.education.length < 3) {
             addeducation.textContent = "Add Education"
             addeducation.href = "../html/addeducation.html"
             addeducation.style.display = "block"
@@ -553,7 +546,10 @@ async function showUser() {
               headers: {
                 "Content-type": "application/json; charset=UTF-8",
               },
-            }).then((response) => console.log(response))
+            }).then((response) => {
+              if(response.status == 204) flag = true
+              else flag = false
+            })
           })
 
 
@@ -567,29 +563,20 @@ async function showUser() {
           const eduform = document.createElement('form')
           eduform.className = "edu__form"
           const edu_input_name = document.createElement('input')
+          edu_input_name.placeholder = "Instuite Name"
           const edu_degree_input = document.createElement('input')
+          edu_degree_input.placeholder = "Degree"
           const edu_start_input = document.createElement('input')
+          edu_start_input.placeholder = "Start Year"
           const edu_end_input = document.createElement('input')
+          edu_end_input.placeholder = "End Year"
           const edu_gpa_input = document.createElement('input')
-          const name_lable = document.createElement('lable')
-          const gpa_lable = document.createElement('lable')
-          const start_lable = document.createElement('lable')
-          const deg_lable = document.createElement('lable')
-          const end_lable = document.createElement('lable')
-          name_lable.textContent = "Instuite Name"
-          deg_lable.textContent = "Degree Name"
-          gpa_lable.textContent = "GPA"
-          start_lable.textContent = "Start Year"
-          end_lable.textContent = "End Year"
-          eduform.appendChild(name_lable)
+          edu_gpa_input.placeholder = "GPA"
+         
           eduform.appendChild(edu_input_name)
-          eduform.appendChild(deg_lable)
           eduform.appendChild(edu_degree_input)
-          eduform.appendChild(gpa_lable)
           eduform.appendChild(edu_gpa_input)
-          eduform.appendChild(start_lable)
           eduform.appendChild(edu_start_input)
-          eduform.appendChild(end_lable)
           eduform.appendChild(edu_end_input)
 
           const eduformDiv = document.createElement('div')
@@ -619,7 +606,10 @@ async function showUser() {
               headers: {
                 "Content-type": "application/json; charset=UTF-8",
               },
-            }).then((response) => console.log(response))
+            }).then((response) => {
+              if(response.status == 201) flag = true
+              else flag = false
+            })
 
           })
 
@@ -631,12 +621,46 @@ async function showUser() {
         })
 
 
-
+        const hr1 = document.createElement('hr')
+        const hr2 = document.createElement('hr')
+        const hr3 = document.createElement('hr')
+        const hr4 = document.createElement('hr')
+        const hr5 = document.createElement('hr')
+        const hr6 = document.createElement('hr')
+        const hr7 = document.createElement('hr')
+        const hr8 = document.createElement('hr')
+        const hr9 = document.createElement('hr')
+        const hr10 = document.createElement('hr')
+        hr1.className = "line"
+        hr2.className = "line"
+        hr3.className = "line"
+        hr4.className = "line"
+        hr5.className = "line"
+        hr6.className = "line"
+        hr7.className = "line"
+        hr8.className = "line"
+        hr9.className = "line"
+        hr10.className = "line"
+        div.appendChild(hr10)
+        div.appendChild(detail_heading)
+        div.appendChild(hr1)
         userElem.appendChild(delDiv)
         div.appendChild(detail)
+        div.appendChild(hr2)
+        div.appendChild(location_heading)
+        div.appendChild(hr3)
         div.appendChild(locationDiv)
+        div.appendChild(hr4)
+        div.appendChild(skill_heading)
+        div.appendChild(hr5)
         div.appendChild(skillGrp)
+        div.appendChild(hr6)
+        div.appendChild(education_heading)
+        div.appendChild(hr7)
         div.appendChild(educationgrp)
+        div.appendChild(hr8)
+        div.appendChild(company_heading)
+        div.appendChild(hr9)
         div.appendChild(companiesgrp)
         parentDiv.appendChild(div)
         userElem.appendChild(parentDiv)
@@ -645,6 +669,7 @@ async function showUser() {
     })
 }
 
-window.addEventListener("load", (event) => {
+window.addEventListener("load", () => {
   showUser(); // already declared somewhere else
+  //if(flag == true)location.reload()
 });

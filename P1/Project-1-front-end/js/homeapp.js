@@ -8,7 +8,7 @@ async function showAllUser() {
     .then(response => response.json())
     .then(users => {
       // console.log(users[0].location[0].city)
-      users.reverse()
+      //users.reverse()
       users.forEach(newUser => {
 
         const parentDiv = document.createElement('div')

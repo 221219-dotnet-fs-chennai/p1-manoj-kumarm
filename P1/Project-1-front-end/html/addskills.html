@@ -263,6 +263,7 @@
         <!-- <span class="footer__text"></span> -->
         <a href="./addEducation.html" class="footer__signup">Skip for now</a>
         <a href="./home.html" class="footer__signup">Go to home</a>
+        <a href="./profile.html" class="footer__signup">Go to profile</a>
       </div>
     </div>
   </main>
@@ -286,7 +287,7 @@
       }).then((response) => {
         if (response.status === 201) {
           alert("added the details")
-          window.location.href = "../html/addEducation.html"
+          window.location.href = "../html/addSkills.html"
         }else if(response.status === 400) {
           alert("Sorry you can only add atmost 3 skills")
           window.location.href = "../html/addEducation.html"

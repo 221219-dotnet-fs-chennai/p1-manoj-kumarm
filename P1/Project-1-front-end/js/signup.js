@@ -40,7 +40,7 @@ async function handleSignUp() {
     //.then((response) => console.log(response))
     .then((response) => {if(response.redirected === true){
       localStorage.setItem("email", email)
-      window.location.href="../html/addlocation.html"
+      window.location.href="../html/addpersonal.html"
     } 
     else if(response.redirected === false){alert("invalid credentials, try again or try signing up!")}})
     //  .then((response) => response.json())

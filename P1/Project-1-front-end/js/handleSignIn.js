@@ -8,7 +8,7 @@ async function validateAndSignIn() {
     /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
   //least one lowercase letter, one uppercase letter, one numeric digit, and one special character
   //let emailRegex = "^([\w.]{5,29}[^.])+[(@{0})]+(gmail|outlook|yahoo)+.com$"
-  if (e == "" || p == "" || !e.match(emailRegex)) {
+  if (e == "" || p == "" || !e.match(emailRegex) ) {
     alert("Invalid email or password");
     flag = false;
     return false;
@@ -37,6 +37,10 @@ async function handleSignIn() {
   .then((response) => {if(response.redirected == true){
     localStorage.setItem("email", email)
     window.location.href = "../html/home.html"
+  }else if(response.status == 401){
+    alert("email id and password doesnt match!")
+    window.location.href = "../html/login.html"
+
   }})
   .then((response) => response.json())
   .then((json) => {if(json != null){
