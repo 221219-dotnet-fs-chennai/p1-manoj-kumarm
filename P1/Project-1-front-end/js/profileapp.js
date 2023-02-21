@@ -134,6 +134,9 @@ async function showUser() {
         Updatebtn_details.className = "update__btn"
         Updatebtn_details.textContent = "Update"
         detail.appendChild(Updatebtn_details)
+        const icon1 = document.createElement('i')
+        icon1.className = "fa-solid fa-square-pen"  
+        Updatebtn_details.appendChild(icon1)
 
         //Fetch - PUT
         Updatebtn_details.addEventListener("click", () => {
@@ -171,6 +174,7 @@ async function showUser() {
 
 
         const addlocation = document.createElement('a')
+        addlocation.className = "add_link"
         addlocation.style.display = "none"
         if (newUser.location.length == 0) {
           addlocation.textContent = "Add Location"
@@ -192,15 +196,22 @@ async function showUser() {
           locationDiv.appendChild(userlocationcity)
           locationDiv.appendChild(userlocationzipcode)
 
-          //button
+          //update
           const Updatebtn_loc = document.createElement('button')
           Updatebtn_loc.className = "update__btn"
           Updatebtn_loc.textContent = "Update"
           locationDiv.appendChild(Updatebtn_loc)
+          const icon2 = document.createElement('i')
+          icon2.className = "fa-solid fa-square-pen"
+          Updatebtn_loc.appendChild(icon2)
 
+          //delete
           const delete_loc = document.createElement('button')
           delete_loc.className = "delete__btn"
           delete_loc.textContent = "Delete"
+          const icon9 = document.createElement('i')
+          icon9.className = "fa-solid fa-delete-left"
+          delete_loc.appendChild(icon9)
           locationDiv.appendChild(delete_loc)
 
           //delete
@@ -272,7 +283,7 @@ async function showUser() {
 
 
         const addskill = document.createElement('a')
-          addskill.style.display = "none"
+        addskill.className = "add_link"
           if (newUser.skills.length < 3) {
             addskill.textContent = "Add Skill"
             addskill.href = "../html/addskills.html"
@@ -291,10 +302,17 @@ async function showUser() {
           const Deletebtn_skill = document.createElement('button')
           Deletebtn_skill.className = "delete__btn"
           Deletebtn_skill.textContent = "Delete"
+          const icon8 = document.createElement('i')
+          icon8.className = "fa-solid fa-delete-left"
+          Deletebtn_skill.appendChild(icon8)
+
           // update
           const Updatebtn_skill = document.createElement('button')
           Updatebtn_skill.className = "update__btn"
           Updatebtn_skill.textContent = "Update"
+          const icon3 = document.createElement('i')
+          icon3.className = "fa-solid fa-square-pen"
+          Updatebtn_skill.appendChild(icon3)
 
           const skillnames = document.createElement('input')
           skillnames.value = skill
@@ -356,6 +374,7 @@ async function showUser() {
 
         //Company
         const addcompany = document.createElement('a')
+        addcompany.className = "add_link"
           addcompany.style.display = "none"
           if (newUser.companies.length < 3) {
             addcompany.textContent = "Add Companies"
@@ -397,11 +416,17 @@ async function showUser() {
           const Updatebtn_comp = document.createElement('button')
           Updatebtn_comp.className = "update__btn"
           Updatebtn_comp.textContent = "Update"
+          const icon10 = document.createElement('i')
+          icon10.className = "fa-solid fa-square-pen"
+          Updatebtn_comp.appendChild(icon10)
 
           // delete
           const Deletebtn_comp = document.createElement('button')
           Deletebtn_comp.className = "delete__btn"
           Deletebtn_comp.textContent = "Delete"
+          const icon7 = document.createElement('i')
+          icon7.className = "fa-solid fa-delete-left"
+          Deletebtn_comp.appendChild(icon7)
 
           // on click - update
 
@@ -491,6 +516,7 @@ async function showUser() {
         //Education
         const educationgrp = document.createElement('article')
         const addeducation = document.createElement('a')
+        addeducation.className = "add_link"
           addeducation.style.display = "none"
           if (newUser.education.length < 3) {
             addeducation.textContent = "Add Education"
@@ -534,6 +560,9 @@ async function showUser() {
           const Deletebtn_edu = document.createElement('button')
           Deletebtn_edu.className = "delete__btn"
           Deletebtn_edu.textContent = "Delete"
+          const icon6 = document.createElement('i')
+          icon6.className = "fa-solid fa-delete-left"
+          Deletebtn_edu.appendChild(icon6)
 
           // on click - delete
           Deletebtn_edu.addEventListener("click", (e) => {
@@ -557,7 +586,9 @@ async function showUser() {
           const Updatebtn_edu = document.createElement('button')
           Updatebtn_edu.className = "update__btn"
           Updatebtn_edu.textContent = "Update"
-
+          const icon5 = document.createElement('i')
+          icon5.className = "fa-solid fa-square-pen"
+          Updatebtn_edu.appendChild(icon5)
           // on click - update
 
           const eduform = document.createElement('form')
