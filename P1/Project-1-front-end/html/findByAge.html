@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Find Trainers</title>
+  <script src="https://kit.fontawesome.com/afbe6959be.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap" rel="stylesheet">
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    button{
+      display: block;
+    }
+    /* nav */
+    .nav {
+      max-width: 1200px;
+      border-radius: 10px;
+      height: 50px;
+      background-color: rgb(0, 0, 0);
+      margin-top: 1rem;
+      position: relative;
+    }
+
+    .nav>.nav-header {
+      display: inline;
+    }
+
+    .nav>.nav-header>.nav-title {
+      cursor: pointer;
+      display: inline-block;
+      font-size: 22px;
+      color: rgb(133, 140, 146);
+      padding: 10px 10px 10px 10px;
+      transition: all 0.5s;
+    }
+    .nav>.nav-header>.nav-title:is(:hover, :focus, :active){
+      color: #1DA1F2;
+    }
+
+    .nav-title > span{
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    .nav>.nav-btn {
+      display: none;
+    }
+
+    .nav>.nav-links {
+      display: inline;
+      float: right;
+      font-size: 18px;
+    }
+
+    .nav>.nav-links>a {
+      font-size: 0.875rem;
+      cursor: pointer;
+      display: inline-block;
+      padding: 13px 10px 13px 10px;
+      text-decoration: none;
+      color: rgb(133, 140, 146);
+      transition: all .5s;
+    }
+
+    #safe:is(:hover, :active, :focus) {
+      color: #f3ca20;
+    }
+
+
+    #danger:is(:hover, :active, :focus) {
+      color: #FF0000;
+    }
+
+
+    .nav>#nav-check {
+      display: none;
+    }
+
+
+
+    .line {
+      display: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+
+    body {
+      max-width: 1200px;
+      margin: auto;
+      background-color: rgb(62, 65, 68);
+      font-family: 'Roboto', sans-serif;
+    }
+
+    hr {
+      opacity: 0.2;
+    }
+
+    input::placeholder {
+      opacity: 1;
+      color: rgb(0, 0, 0);
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .icon {
+      color: #f3ca20;
+      font-size: 1.5rem;
+    }
+
+    .user {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .container {
+      margin-left: 0.4rem;
+      margin-top: 0.4rem;
+      margin-right: 0.4rem;
+      background-color: rgb(0, 0, 0);
+      color: white;
+      border-radius: 1rem;
+      padding: 1rem;
+    }
+
+    .card {
+      text-align: center;
+    }
+
+    .card__user__details {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+    }
+
+    .card__user__loc__grp {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card__user__skill__grp {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card__user__comp__grp {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card__user__edu__grp {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    button {
+      display: block;
+    }
+
+    .nav-section-mobile {
+      display: none;
+    }
+
+
+
+    @media (min-width: 280px) and (max-width: 768px) {
+      .user{
+        display: grid;
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: auto;
+      }
+      .card{
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+      }
+      .card__user__details{
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .nav{
+        background-color: rgb(0, 0, 0);
+        border-radius: 10px;
+        max-width: 390px;
+        margin: auto;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+      }
+      hr{
+        display: none;
+      }
+      .nav-title >span{
+        color: rgb(133, 140, 146);
+      }
+      .nav>.nav-btn {
+        color: rgb(133, 140, 146);
+        display: inline-block;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+      }
+
+      .nav>.nav-btn>label {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        padding: 13px;
+      }
+
+      .nav>.nav-btn>label:hover,
+      .nav #nav-check:checked~.nav-btn>label {
+        color: #1DA1F2;
+      }
+
+      .search-btn{
+        margin-right: 12rem;
+        margin-top: 1rem;
+        padding: 1rem 1rem;
+      }
+
+
+      .nav>.nav-links {
+        position: absolute;
+        display: grid;
+        grid-template-rows: repeat(12, 1fr);
+        width: 100%;
+        margin: auto;
+        background-color: rgb(0, 0, 0);
+        height: 0px;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 50px;
+        left: 0px;
+      }
+
+      .nav>.nav-links>a {
+        text-align: center;
+        cursor: pointer;
+        display: block;
+        width: 100%;
+        color: rgb(133, 140, 146);
+        transition: all .5s;
+      }
+
+      .nav>.nav-links>a>i {
+        margin-bottom: 1rem;
+      }
+
+      #safe:is(:hover, :active, :focus) {
+        color: #f3ca20;
+      }
+
+      .nav>#nav-check:not(:checked)~.nav-links {
+        height: 0px;
+      }
+
+      .nav>#nav-check:checked~.nav-links {
+        height: 100vh;
+        overflow-y: auto;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+        padding: 10px;
+      }
+
+      #danger:is(:hover, :active, :focus) {
+        color: #FF0000;
+      }
+      
+
+      .line {
+        border: 1px solid rgb(62, 65, 68);
+        margin-top: 0;
+        width: 50px;
+      }
+
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="nav">
+    <input type="checkbox" id="nav-check">
+    <div class="nav-header">
+      <div class="nav-title">
+        <span>Find Trainers</span>
+      </div>
+    </div>
+    <div class="nav-btn">
+      <label for="nav-check">
+        <i class="fa-solid fa-burger"></i>
+      </label>
+    </div>
+
+    <div class="nav-links">
+      <a id="safe" href="./profile.html">Profile
+        <i class="fa-solid fa-user"></i>
+        <hr class="line">
+      </a>
+      <a id="danger" onclick="return logout()">Logout
+        <i class="fa-solid fa-right-from-bracket"></i>
+        <hr class="line">
+      </a>
+      <a id="danger" onclick="return deleteAcc()">Delete Account
+        <i class="fa-solid fa-user-slash"></i>
+        <hr class="line">
+      </a>
+    </div>
+  </div>
+  <main>
+    <label>Start Age</label>
+    <input type="number" id="start">
+    <label>End Age</label>
+    <input type="number" id="end">
+    <!-- <button onclick="ShowByAge()" id="search-btn">Search</button> -->
+    <div class="user"> </div>
+    <script src="../js/getByAge.js"></script>
+  </main>
+  <script src="https://kit.fontawesome.com/afbe6959be.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script>
+    function showMblMenu() {
+
+    }
+    async function logout() {
+      if (confirm("Logging out will remove all the data from this browser")) {
+        await localStorage.clear()
+        await localStorage.removeItem("email")
+        window.location.href = "./login.html"
+      } else {
+        window.location.href = "./home.html"
+      }
+    }
+    async function deleteAcc() {
+      let password = window.prompt("Enter your password")
+      if (password != null || password != " " || password != "") {
+        const API_DELETE_URL = "https://localhost:7009/V1/api/ManageUser/delete?"
+        let email = localStorage.getItem("email")
+        email = email.replace(/['‘’"“”]/g, '')
+        await fetch(API_DELETE_URL + new URLSearchParams({
+          email: email,
+          password: password
+        }), {
+          method: "DELETE",
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        }).then((response) => {
+          if (response.status === 204) {
+            localStorage.clear()
+            alert("Account Deleted! click on OK to go the sign up page")
+            window.location.href = "../html/signup.html"
+          } else if (response.status === 400) {
+            alert("Wrong password!")
+            window.location.href = "../html/home.html"
+          } else {
+            alert("something went wrong")
+            window.location.href = "../html/home.html"
+          }
+        })
+      }
+    }
+  </script>
+</body>
+
+</html>

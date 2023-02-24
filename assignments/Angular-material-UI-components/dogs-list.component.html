@@ -1,0 +1,48 @@
+<body style="margin: 1rem;">
+  <section id="card-section">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Shiba Inu</mat-card-title>
+        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>
+          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+          bred for hunting.
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>  
+  </section>  
+  <section id="grid-list-section">
+    <mat-grid-list cols="2" rowHeight="2:1" [gutterSize]="'1rem'">
+      <mat-grid-tile>1</mat-grid-tile>
+      <mat-grid-tile>2</mat-grid-tile>
+      <mat-grid-tile>3</mat-grid-tile>
+      <mat-grid-tile>4</mat-grid-tile>
+    </mat-grid-list>
+  </section> 
+  <section id="chip-listbox-section">
+    <mat-chip-listbox aria-label="Fish selection">
+      <mat-chip-option>One fish</mat-chip-option>
+      <mat-chip-option>Two fish</mat-chip-option>
+      <mat-chip-option color="accent" selected>Accent fish</mat-chip-option>
+      <mat-chip-option color="warn">Warn fish</mat-chip-option>
+    </mat-chip-listbox>
+  </section>
+  <section id="check-box-section">
+      <h4>Select your toppings:</h4>
+      <p><mat-checkbox formControlName="pepperoni">Pepperoni</mat-checkbox></p>
+      <p><mat-checkbox formControlName="extracheese">Extra Cheese</mat-checkbox></p>
+      <p><mat-checkbox formControlName="mushroom">Mushroom</mat-checkbox></p>
+  </section>
+  <section id="loading-spinner-section">
+    <mat-spinner></mat-spinner>
+  </section>
+</body>

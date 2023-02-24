@@ -1,0 +1,32 @@
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+mat-grid-tile{
+  background: lightgreen;
+}
+
+mat-form-field {
+  margin-right: 12px;
+}
+
+#card-section{
+  margin-bottom: 3rem;
+}
+#grid-list-section{
+  margin-bottom: 3rem;
+}
+#chip-listbox-section{
+  margin-bottom: 3rem;
+}
+#check-box-section{
+  margin-bottom: 3rem;
+}
+#chiploading-spinner-section{
+  margin-bottom: 3rem;
+}

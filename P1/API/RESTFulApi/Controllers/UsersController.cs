@@ -71,6 +71,7 @@ namespace RESTFulApiBasics.Controllers
             {
                 return BadRequest();
             }
+            else if (t.Count() == 0) return NotFound();    
             return Ok(t);
         }
 

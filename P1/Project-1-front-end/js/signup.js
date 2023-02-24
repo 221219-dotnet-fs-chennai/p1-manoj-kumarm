@@ -41,8 +41,9 @@ async function handleSignUp() {
     .then((response) => {if(response.redirected === true){
       localStorage.setItem("email", email)
       window.location.href="../html/addpersonal.html"
-    } 
-    else if(response.redirected === false){alert("invalid credentials, try again or try signing up!")}})
+    }
+    else if(response.status == 400) alert("account already exists, please login") 
+    else if(response.redirected === false){alert("invalid credentials, try again!")}})
     //  .then((response) => response.json())
     //  .then(json => console.log(json))
 
